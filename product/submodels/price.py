@@ -1,4 +1,5 @@
 from django.db.models import (Model, CharField, DecimalField)
+from django.db.models.fields import DateTimeField
 
 
 class PriceModel(Model):
@@ -12,6 +13,8 @@ class PriceModel(Model):
                        blank=True,
                        null=True)
     per = CharField(max_length=60, blank=True, null=True)
+    created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
+    modified_date = DateTimeField(auto_now=True, blank=True, null=True)
 
     def __str__(self) -> str:
         return 'is {}'.format(self.now)
