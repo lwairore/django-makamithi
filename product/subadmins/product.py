@@ -15,6 +15,9 @@ class ProductModelAdmin(ModelAdmin):
         ('Product category', {
             'fields': ('category',)
         },),
+        ('Price', {
+            'fields': ('price',)
+        },),
     )
     search_fields = ('title',)
 
