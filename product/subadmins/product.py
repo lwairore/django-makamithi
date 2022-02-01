@@ -4,7 +4,7 @@ from django.contrib.admin import ModelAdmin, register
 
 @register(ProductModel)
 class ProductModelAdmin(ModelAdmin):
-    list_display = ('title',)
+    list_display = ('title', 'category',)
     raw_id_fields = ('category',)
     fieldsets = (
         (None, {
