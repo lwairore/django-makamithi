@@ -1,6 +1,7 @@
 from product.serializers import ListProductCategorySerializer
 from product.submodels.category import ProductCategoryModel
 from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
 from rest_framework.views import APIView
 
 
@@ -20,4 +21,4 @@ class ListProductCategoryAPIView(APIView):
         categories_serializer = self._serializer_class(
             categories, many=True)
 
-        return categories_serializer.data
+        return Response(categories_serializer.data)
