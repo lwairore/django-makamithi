@@ -3,6 +3,6 @@ from rest_framework.serializers import ModelSerializer
 
 
 class ListProductCategorySerializer(ModelSerializer):
-    class Model:
+    class Meta:
         model = ProductCategoryModel
         fields = ('title', 'description',)
