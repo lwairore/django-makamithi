@@ -9,5 +9,5 @@ class ProductModelAdmin(ModelAdmin):
     fieldsets = (
         (None, {
             'fields': ('title',)
-        })
+        },),
     )
