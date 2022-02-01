@@ -27,3 +27,5 @@ class ProductModelAdmin(ModelAdmin):
         )
 
         return format_html('{} - <a href="{}"> <b><i>View category</i></b> </a>', category_title, url)
+
+    view_category_link.short_description = 'Category'
