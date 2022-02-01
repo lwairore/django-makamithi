@@ -7,3 +7,7 @@ class ProductModel(Model):
 
     def __str__(self) -> str:
         return self.title
+
+    class Meta:
+        verbose_name = 'Product'
+        verbose_name_plural = 'Products'
