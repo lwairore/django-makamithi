@@ -1,5 +1,4 @@
-from django.db.models import (Model, DecimalField)
-from django.db.models.fields import CharField
+from django.db.models import (Model, CharField, DecimalField)
 
 
 class PriceModel(Model):
