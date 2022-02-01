@@ -10,4 +10,7 @@ class ProductModelAdmin(ModelAdmin):
         (None, {
             'fields': ('title',)
         },),
+        ('Product category', {
+            'fields': ('category',)
+        },),
     )
