@@ -12,7 +12,8 @@ class _ListPriceModelSerializer(ModelSerializer):
 
 class ListProductSerializer(ModelSerializer):
     category = CharField(source='category.title')
+    price = _ListPriceModelSerializer(many=True)
 
     class Meta:
         model = ProductModel
-        fields = ('title', 'category',)
+        fields = ('title', 'category', 'price',)
