@@ -1,10 +1,12 @@
-from django.db.models import Model, ForeignKey, CharField, PROTECT
+from django.db.models import (
+    Model, ForeignKey, CharField, PROTECT, ManyToManyField)
 
 
 class ProductModel(Model):
     title = CharField(max_length=250)
     category = ForeignKey('ProductCategoryModel', on_delete=PROTECT,
                           blank=True, null=True)
+    price = ManyToManyField('PriceModel', blank=True)
 
     def __str__(self) -> str:
         return self.title
