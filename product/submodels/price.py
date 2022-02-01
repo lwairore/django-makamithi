@@ -13,3 +13,10 @@ class PriceModel(Model):
                        blank=True,
                        null=True)
     per = CharField(max_length=60, blank=True, null=True)
+
+    def __str__(self) -> str:
+        return 'is {}'.format(self.now)
+
+    class Meta:
+        verbose_name = 'Price'
+        verbose_name_plural = 'Prices'
