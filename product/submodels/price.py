@@ -1,4 +1,4 @@
-from django.db.models import (Model, CharField, DecimalField)
+from django.db.models import (Model, ForeignKey, DecimalField, PROTECT)
 from django.db.models.fields import DateTimeField
 
 
@@ -12,7 +12,8 @@ class PriceModel(Model):
                        decimal_places=2,
                        blank=True,
                        null=True)
-    per = CharField(max_length=60, blank=True, null=True)
+    per = ForeignKey('UnitOfMeasurementModel', blank=True,
+                     null=True, on_delete=PROTECT)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
 
