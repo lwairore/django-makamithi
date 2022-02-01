@@ -3,7 +3,7 @@ from django.db.models.fields import (CharField, TextField)
 
 
 class ProductCategoryModel(Model):
-    title = CharField(max_length=80)
+    title = CharField(max_length=250)
     description = TextField(max_length=5000, blank=True, null=True)
 
     def __str__(self) -> str:
