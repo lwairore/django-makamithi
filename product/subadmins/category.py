@@ -3,10 +3,12 @@ from product.submodels.category import ProductCategoryModel
 from django.contrib.admin import ModelAdmin, register
 from django.utils.html import format_html
 
+
 @register(ProductCategoryModel)
 class ProductCategoryModelAdmin(ModelAdmin):
     list_display = ('title', 'number_of_products',)
     search_fields = ('title', 'description',)
+    list_filter = ('modified_date', 'created_at',)
 
     def number_of_products(self, obj):
         products_count = obj.product_category.all()\
