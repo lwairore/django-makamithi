@@ -2,7 +2,7 @@ from django.db.models import Model, ForeignKey, CharField, PROTECT
 
 
 class ProductModel(Model):
-    title = CharField(max_length=80)
+    title = CharField(max_length=250)
     category = ForeignKey('ProductCategoryModel', on_delete=PROTECT,
                           blank=True, null=True)
 
