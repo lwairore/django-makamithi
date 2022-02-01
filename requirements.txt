@@ -1,6 +1,6 @@
 Django>=2.0,<3.0
 djangorestframework==3.10.3
-psycopg2>=2.7,<3.0
+psycopg2==2.8.6
 pylint-django
 pylint
 python-decouple
