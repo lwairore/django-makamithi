@@ -17,6 +17,18 @@ from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
 
+
+# default: "Django Administration"
+admin.site.site_header = 'Makamithi Administration'
+
+# default: "Site administration"
+admin.site.index_title = 'Makamithi Site administration'
+
+admin.site.site_title = 'Makamithi  site admin'  # default: "Django site admin"
+
+# By default , "VIEW SITE" points to '/' i.e localhost:8000
+admin.site.site_url = "https://makamithi.com/"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', include('product.urls')),
