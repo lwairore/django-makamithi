@@ -11,7 +11,8 @@ class ListProductAPIView(APIView):
     _serializer_class = ListProductSerializer
 
     def list_product(self):
-        categories = self._category_model_class.objects.all()
+        categories = self._category_model_class.objects\
+            .select_related('category').all()
 
         return categories
 
