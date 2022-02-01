@@ -16,6 +16,7 @@ class ProductModelAdmin(ModelAdmin):
             'fields': ('category',)
         },),
     )
+    search_fields = ('title',)
 
     def view_category_link(self, obj):
         category_id = obj.category.id
