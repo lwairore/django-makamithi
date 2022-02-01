@@ -14,3 +14,5 @@ class ProductCategoryModelAdmin(ModelAdmin):
             .order_by().only('id').count()
 
         return products_count
+
+    number_of_products.short_description = 'Products associated'
