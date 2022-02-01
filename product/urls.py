@@ -1,4 +1,4 @@
-from product.views import ListProductCategoryAPIView
+from product.views.category import ListProductCategoryAPIView
 from django.urls.conf import path
 
 urlpatterns = [
