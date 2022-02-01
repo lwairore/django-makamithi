@@ -3,3 +3,4 @@ djangorestframework==3.10.3
 psycopg2>=2.7,<3.0
 pylint-django
 pylint
+python-decouple
