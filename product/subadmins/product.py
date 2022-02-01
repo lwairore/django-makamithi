@@ -20,6 +20,7 @@ class ProductModelAdmin(ModelAdmin):
         },),
     )
     search_fields = ('title',)
+    filter_horizontal = ('price',)
 
     def view_category_link(self, obj):
         category_id = obj.category.id
