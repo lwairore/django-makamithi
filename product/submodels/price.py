@@ -1,4 +1,5 @@
 from django.db.models import (Model, DecimalField)
+from django.db.models.fields import CharField
 
 
 class PriceModel(Model):
@@ -11,3 +12,4 @@ class PriceModel(Model):
                        decimal_places=2,
                        blank=True,
                        null=True)
+    per = CharField(max_length=60, blank=True, null=True)

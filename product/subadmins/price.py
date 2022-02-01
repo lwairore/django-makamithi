@@ -1,6 +1,8 @@
-from django.contrib.admin.options import ModelAdmin
+from product.submodels.price import PriceModel
+from django.contrib.admin import ModelAdmin, register
 
 
+@register(PriceModel)
 class PriceModelAdmin(ModelAdmin):
     list_display = ('now', 'was', 'per',)
     fieldsets = (
