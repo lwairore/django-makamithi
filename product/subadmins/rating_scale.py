@@ -8,6 +8,8 @@ class FivePointRatingScaleModelAdmin(ModelAdmin):
                     'number_of_four_star', 'number_of_three_star',
                     'number_of_two_star',
                     'number_of_one_star',)
+    filter_horizontal = ('five_star', 'four_star',
+                         'three_star', 'two_star', 'one_star',)
 
     def number_of_five_star(self, obj):
         five_star_count = obj.five_star.all().count()
