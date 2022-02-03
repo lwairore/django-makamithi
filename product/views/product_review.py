@@ -7,6 +7,9 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.status import HTTP_404_NOT_FOUND
 from rest_framework.views import APIView
 
+class UpdateDeleteProductReview(APIView):
+    permission_classes = (AllowAny,)
+    
 
 class ListProductReviewAPIView(APIView):
     permission_classes = (AllowAny,)
