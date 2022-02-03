@@ -3,13 +3,13 @@ from product.submodels.product import ProductModel
 from product.submodels.rating_scale import FivePointRatingScaleModel
 from product.serializers.product_review import ListProductReviewSerializer
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.status import HTTP_404_NOT_FOUND
 from rest_framework.views import APIView
 
 
 class ListProductReviewAPIView(APIView):
-    permission_classes = (IsAuthenticated)
+    permission_classes = (AllowAny,)
     _serializer_class = ListProductReviewSerializer
 
     def _get_product_instance(self, product_id: int):
