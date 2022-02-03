@@ -1,3 +1,4 @@
+from product.submodels.product import ProductModel
 from custom_utils.dict_is_not_empty import dict_is_not_empty
 from custom_utils.string_is_not_empty import string_is_not_empty
 from custom_utils.check_key_util import check_key
@@ -44,3 +45,11 @@ class UpdateProductReviewSerializer(ModelSerializer):
                 'required': False
             },
         }
+
+
+class UpdateProductReviewGatewaySerializer(ModelSerializer):
+    reviews = UpdateProductReviewSerializer()
+
+    class Meta:
+        model = ProductModel
+        fields = ('reviews',)
