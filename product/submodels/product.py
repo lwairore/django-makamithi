@@ -8,7 +8,7 @@ class ProductModel(Model):
     category = ForeignKey('ProductCategoryModel', on_delete=PROTECT,
                           blank=True, null=True, related_name='product_category')
     price = ManyToManyField('PriceModel', blank=True)
-    reviews = ManyToManyField('FivePointRatingScaleModel', blank=True)
+    reviews = ManyToManyField('ProductReviewModel', blank=True)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
 

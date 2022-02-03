@@ -1,42 +1,23 @@
 from django.db.models.query import Prefetch
 from product.submodels.product import ProductModel
-from product.submodels.rating_scale import FivePointRatingScaleModel, RatingScaleModel
+from product.submodels.rating_scale import ProductReviewModel
 from product.serializers.product_review import ListProductReviewSerializer
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.status import HTTP_404_NOT_FOUND
 from rest_framework.views import APIView
-
-class UpdateDeleteProductReview(APIView):
-    permission_classes = (AllowAny,)
     
 
-class ListProductReviewAPIView(APIView):
-    permission_classes = (AllowAny,)
+class ListUpdateProductReviewAPIView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     _serializer_class = ListProductReviewSerializer
 
     def _get_product_instance(self, product_id: int):
         product_instance = None
 
         try:
-            star_kueryset = RatingScaleModel.objects.order_by()
-
-            five_star_prefetch_related = Prefetch(
-                'five_star', queryset=star_kueryset)
-            four_star_prefetch_related = Prefetch(
-                'four_star', queryset=star_kueryset)
-            three_star_prefetch_related = Prefetch(
-                'three_star', queryset=star_kueryset)
-            two_star_prefetch_related = Prefetch(
-                'two_star', queryset=star_kueryset)
-            one_star_prefetch_related = Prefetch(
-                'one_star', queryset=star_kueryset)
-
-            reviews_kueryset = FivePointRatingScaleModel.objects\
-                .order_by().prefetch_related(
-                    five_star_prefetch_related,
-                    four_star_prefetch_related,
-                    three_star_prefetch_related, two_star_prefetch_related, one_star_prefetch_related)
+            reviews_kueryset = ProductReviewModel.objects\
+                .order_by()
 
             reviews_prefetch_related = Prefetch(
                 'reviews', queryset=reviews_kueryset)

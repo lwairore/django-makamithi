@@ -1,34 +1,33 @@
 from django.db.models import Model
-from django.db.models.fields import TextField
-from django.db.models.fields.related import ManyToManyField
+from django.db.models.fields import CharField, TextField
+
+FIVE_POINTS_SCALE = '5'
+FOUR_POINTS_SCALE = '4'
+THREE_POINTS_SCALE = '3'
+TWO_POINTS_SCALE = '2'
+ONE_POINT_SCALE = '1'
+
+FIVE_POINT_NUMERICAL_RATING_SCALE = (
+    (FIVE_POINTS_SCALE, 'Five stars'),
+    (FOUR_POINTS_SCALE, 'Four stars'),
+    (THREE_POINTS_SCALE, 'Three stars'),
+    (TWO_POINTS_SCALE, 'Two stars'),
+    (ONE_POINT_SCALE, 'One star'),
+)
 
 
-class RatingScaleModel(Model):
+class ProductReviewModel(Model):
+    rating = CharField(
+        max_length=11,
+        choices=FIVE_POINT_NUMERICAL_RATING_SCALE,
+        default=FIVE_POINTS_SCALE,
+    )
+
     review = TextField(max_length=5000)
 
     def __str__(self) -> str:
-        return self.review[:30]
+        return self.rating
 
     class Meta:
-        verbose_name = 'Rating Scale'
-        verbose_name_plural = 'Rating scales'
-
-
-class FivePointRatingScaleModel(Model):
-    five_star = ManyToManyField(
-        RatingScaleModel, blank=True, related_name='five_star')
-    four_star = ManyToManyField(
-        RatingScaleModel, blank=True, related_name='four_star')
-    three_star = ManyToManyField(
-        RatingScaleModel, blank=True, related_name='three_star')
-    two_star = ManyToManyField(
-        RatingScaleModel, blank=True, related_name='two_star')
-    one_star = ManyToManyField(
-        RatingScaleModel, blank=True, related_name='one_star')
-
-    def __str__(self) -> str:
-        return f'Rating scale {self.id}'
-
-    class Meta:
-        verbose_name = 'Five point rating scale'
-        verbose_name_plural = 'Five point rating scales'
+        verbose_name = 'Product review'
+        verbose_name_plural = 'Product reviews'
