@@ -9,5 +9,5 @@ _PRODUCT_ID_PARAMETER = '<int:product_id>'
 _LIST_PRODUCT_REVIEW_URL_ROUTE = 'list/product/' + _PRODUCT_ID_PARAMETER + '/'
 
 urlpatterns = [
-    path('list/product/<int:product_id>/', ListProductReviewAPIView.as_view()),
+    path(_LIST_PRODUCT_REVIEW_URL_ROUTE, ListProductReviewAPIView.as_view()),
 ]
