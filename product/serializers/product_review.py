@@ -113,3 +113,13 @@ class UpdateProductReviewGatewaySerializer(ModelSerializer):
     class Meta:
         model = ProductModel
         fields = ('reviews',)
+
+    def update(self, instance: ProductModel, validated_data):
+        updated_details = validated_data.pop('reviews')
+
+        if instance.reviews.all().exists():
+            return UpdateProductReviewSerializer()\
+                .manually_handle_put_for_existing_models(instance, updated_details)
+        else:
+            return UpdateProductReviewSerializer()\
+                .manually_handle_put_for_non_existing_models(instance, updated_details)
