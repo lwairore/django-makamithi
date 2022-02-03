@@ -1,3 +1,4 @@
+from django.db.models import fields
 from product.submodels.rating_scale import  ProductReviewModel
 from rest_framework.serializers import ModelSerializer
 
@@ -9,4 +10,6 @@ class ListProductReviewSerializer(ModelSerializer):
 
 
 class AddProductReviewSerializer(ModelSerializer):
-    pass
+    class Meta:
+        model = ProductReviewModel
+        fields = ('rating', 'review',)
