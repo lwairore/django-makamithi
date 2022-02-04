@@ -10,7 +10,7 @@ _ADD_PRODUCT_REVIEW_URL_ROUTE = 'add/'
 
 _RETRIEVE_PRODUCT_REVIEW_URL_ROUTE = '<int:product_review_id>/'
 
-_DELETE_PRODUCT_REVIEW_URL_ROUTE = f'{_RETRIEVE_PRODUCT_REVIEW_URL_ROUTE}delete'
+_DELETE_PRODUCT_REVIEW_URL_ROUTE = f'{_RETRIEVE_PRODUCT_REVIEW_URL_ROUTE}delete/'
 
 urlpatterns = [
     # List reviews for a particular product
