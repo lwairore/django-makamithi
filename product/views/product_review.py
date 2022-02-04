@@ -8,13 +8,13 @@ from product.submodels.product import ProductModel
 from product.submodels.rating_scale import ProductReviewModel
 from product.serializers.product_review import ListProductReviewSerializer, UpdateProductReviewGatewaySerializer, UpdateProductReviewSerializer
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.status import HTTP_404_NOT_FOUND, HTTP_400_BAD_REQUEST
 from rest_framework.views import APIView
 
 
 class ListUpdateProductReviewAPIView(APIView):
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (AllowAny,)
 
     def _get_product_instance(self, product_id: int):
         product_instance = None
