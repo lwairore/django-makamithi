@@ -6,11 +6,13 @@ from custom_utils.dict_is_not_empty import dict_is_not_empty
 from custom_utils.string_is_not_empty import string_is_not_empty
 from custom_utils.check_key_util import check_key
 from django.db.models import fields
-from rest_framework.fields import IntegerField
+from rest_framework.fields import CharField, IntegerField
 from product.submodels.rating_scale import ProductReviewModel
 from rest_framework.serializers import ModelSerializer
 
 class RetrieveProductReviewSerializer(ModelSerializer):
+    rating = CharField(source='get_rating_display')
+    
     class Meta:
         model = ProductReviewModel
         fields = ('rating', 'review', 'id',)
