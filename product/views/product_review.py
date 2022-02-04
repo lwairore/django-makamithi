@@ -88,6 +88,9 @@ class ListUpdateProductReviewAPIView(APIView):
         if update_reviews_serializer.is_valid():
             details_to_note = update_reviews_serializer.save()
 
+            print("details_to_note")
+            print(details_to_note)
+
             if iterable_object_is_not_empty(details_to_note):
                 details_to_note_serializer = DetailToNoteSerializer(
                     details_to_note)
