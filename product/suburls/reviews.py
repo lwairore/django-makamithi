@@ -4,7 +4,7 @@ from django.urls import path
 
 REVIEW_URL_FILE_NAME_WITHOUT_EXTENSION = get_file_name(__file__)
 
-_LIST_PRODUCT_REVIEW_URL_ROUTE = 'list/product/'
+_LIST_PRODUCT_REVIEW_URL_ROUTE = ''
 
 urlpatterns = [
     path(_LIST_PRODUCT_REVIEW_URL_ROUTE, ListUpdateProductReviewAPIView.as_view()),
