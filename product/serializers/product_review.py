@@ -67,8 +67,11 @@ class UpdateProductReviewSerializer(ModelSerializer):
 
     def manually_handle_put_for_existing_models(self, product_instance: ProductModel, updated_details):
         if not check_key(updated_details, 'id'):
-            return self.manually_handle_put_for_non_existing_models(
-                product_instance, updated_details)
+            try:
+                return self.manually_handle_put_for_non_existing_models(
+                    product_instance, updated_details)
+            except ValidationError as validation_error:
+                raise validation_error
 
         review_id = updated_details.get('id')
 
