@@ -6,7 +6,7 @@ from custom_utils.check_key_util import check_key
 from django.db.models.query import Prefetch
 from product.submodels.product import ProductModel
 from product.submodels.rating_scale import ProductReviewModel
-from product.serializers.product_review import ListProductReviewSerializer, UpdateProductReviewGatewaySerializer, UpdateProductReviewSerializer
+from product.serializers.product_review import RetrieveProductReviewSerializer, UpdateProductReviewGatewaySerializer, UpdateProductReviewSerializer
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.status import HTTP_404_NOT_FOUND, HTTP_400_BAD_REQUEST
@@ -40,11 +40,32 @@ class RetrieveDeleteProductAPIView(APIView):
         try:
             product_review_instance = product_instance.reviews\
                 .get(id=product_review_id)
-            
+
             return product_review_instance
         except ProductReviewModel.DoesNotExist as product_review_does_not_exist:
             raise product_review_does_not_exist
 
+    def get(self, request, product_id: int, product_review_id: int):
+        product_instance = None
+
+        try:
+            product_instance = self._get_product_instance(product_id)
+
+        except ProductModel.DoesNotExist:
+            return Response({'detail': f'Product with that id {product_id} not found.'}, status=HTTP_404_NOT_FOUND)
+
+        product_review_instance = None
+
+        try:
+            product_review_instance = self._get_product_review_instance(
+                product_instance, product_review_id)
+        except ProductReviewModel.DoesNotExist:
+            return Response({'detail': f'Product review with that id {product_review_id} not found.'}, status=HTTP_404_NOT_FOUND)
+
+        product_review_serializer = RetrieveProductReviewSerializer(
+            product_review_instance)
+
+        return product_review_serializer
 
 
 class ListUpdateProductReviewAPIView(APIView):
@@ -84,7 +105,8 @@ class ListUpdateProductReviewAPIView(APIView):
 
         reviews = self._list_reviews(product_instance)
 
-        reviews_serializer = ListProductReviewSerializer(reviews, many=True)
+        reviews_serializer = RetrieveProductReviewSerializer(
+            reviews, many=True)
 
         return Response(reviews_serializer.data)
 
