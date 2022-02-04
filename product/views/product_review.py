@@ -3,13 +3,13 @@ from custom_utils.iterable_object_is_not_empty import iterable_object_is_not_emp
 from custom_utils.parse_json_data_util import parse_json_data
 from custom_utils.string_is_not_empty import string_is_not_empty
 from custom_utils.check_key_util import check_key
-from django.db.models.query import Prefetch
+from django.db.models.query import Prefetch, QuerySet
 from product.submodels.product import ProductModel
 from product.submodels.rating_scale import ProductReviewModel
 from product.serializers.product_review import RetrieveProductReviewSerializer, UpdateProductReviewGatewaySerializer, UpdateProductReviewSerializer
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
-from rest_framework.status import HTTP_404_NOT_FOUND, HTTP_400_BAD_REQUEST
+from rest_framework.status import HTTP_204_NO_CONTENT, HTTP_404_NOT_FOUND, HTTP_400_BAD_REQUEST
 from rest_framework.views import APIView
 
 
@@ -34,16 +34,16 @@ class RetrieveDeleteProductAPIView(APIView):
         except ProductModel.DoesNotExist as product_does_not_exist:
             raise product_does_not_exist
 
-    def _get_product_review_instance(self, product_instance: ProductModel, product_review_id: int):
-        product_review_instance = None
+    def _get_product_review_instance(self, product_instance: ProductModel, product_review_id: int,
+                                     return_instance_as_kueryset=False):
 
-        try:
-            product_review_instance = product_instance.reviews\
-                .get(id=product_review_id)
+        product_review_kueryset: QuerySet = product_instance.reviews\
+            .filter(id=product_review_id)
 
-            return product_review_instance
-        except ProductReviewModel.DoesNotExist as product_review_does_not_exist:
-            raise product_review_does_not_exist
+        if not product_review_kueryset.exists():
+            raise ProductReviewModel.DoesNotExist
+
+        return product_review_kueryset if return_instance_as_kueryset else product_review_kueryset.first()
 
     def get(self, request, product_id: int, product_review_id: int):
         product_instance = None
@@ -66,6 +66,28 @@ class RetrieveDeleteProductAPIView(APIView):
             product_review_instance)
 
         return product_review_serializer
+
+    def delete(self, request, product_id: int, product_review_id: int):
+        product_instance = None
+
+        try:
+            product_instance = self._get_product_instance(product_id)
+
+        except ProductModel.DoesNotExist:
+            return Response({'detail': f'Product with that id {product_id} not found.'}, status=HTTP_404_NOT_FOUND)
+
+        product_review_kueryset = None
+
+        try:
+            product_review_kueryset = self._get_product_review_instance(
+                product_instance=product_instance, product_review_id=product_review_id,
+                return_instance_as_kueryset=True)
+        except ProductReviewModel.DoesNotExist:
+            return Response({'detail': f'Product review with that id {product_review_id} not found.'}, status=HTTP_404_NOT_FOUND)
+
+        product_review_kueryset.delete()
+
+        return Response(status=HTTP_204_NO_CONTENT)
 
 
 class ListUpdateProductReviewAPIView(APIView):
