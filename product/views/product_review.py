@@ -65,7 +65,7 @@ class RetrieveDeleteProductAPIView(APIView):
         product_review_serializer = RetrieveProductReviewSerializer(
             product_review_instance)
 
-        return product_review_serializer
+        return Response(product_review_serializer.data)
 
     def delete(self, request, product_id: int, product_review_id: int):
         product_instance = None
