@@ -21,7 +21,7 @@ class RetrieveDeleteProductAPIView(APIView):
 
         try:
             reviews_kueryset = ProductReviewModel.objects\
-                .order_by()
+                .only('id').order_by()
 
             reviews_prefetch_related = Prefetch(
                 'reviews', queryset=reviews_kueryset)
@@ -33,6 +33,18 @@ class RetrieveDeleteProductAPIView(APIView):
 
         except ProductModel.DoesNotExist as product_does_not_exist:
             raise product_does_not_exist
+
+    def _get_product_review_instance(self, product_instance: ProductModel, product_review_id: int):
+        product_review_instance = None
+
+        try:
+            product_review_instance = product_instance.reviews\
+                .get(id=product_review_id)
+            
+            return product_review_instance
+        except ProductReviewModel.DoesNotExist as product_review_does_not_exist:
+            raise product_review_does_not_exist
+
 
 
 class ListUpdateProductReviewAPIView(APIView):
