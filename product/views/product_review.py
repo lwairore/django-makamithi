@@ -68,14 +68,9 @@ class ListUpdateProductReviewAPIView(APIView):
         if not check_key(request_data, 'reviews'):
             return Response({'detail': 'Nothing TODO here'})
 
-        unformatted_reviews = request_data.get('contact_details')
-
-        if not string_is_not_empty(unformatted_reviews):
-            return Response({'detail': 'Nothing TODO here'})
+        unformatted_reviews = request_data.get('reviews')
 
         print(unformatted_reviews)
-
-        unformatted_reviews = parse_json_data(unformatted_reviews)
 
         if not iterable_object_is_not_empty(unformatted_reviews):
             return Response({'detail': 'Nothing TODO here'})
