@@ -10,7 +10,8 @@ _ADD_PRODUCT_REVIEW_URL_ROUTE = 'add/'
 
 urlpatterns = [
     # List reviews for a particular product
-    path(_LIST_PRODUCT_REVIEW_URL_ROUTE, ListUpdateProductReviewAPIView.as_view()),
+    path(_LIST_PRODUCT_REVIEW_URL_ROUTE,
+         ListUpdateProductReviewAPIView.as_view()),
 
     # Add review for a product
     path(_ADD_PRODUCT_REVIEW_URL_ROUTE, ListUpdateProductReviewAPIView.as_view()),
