@@ -14,7 +14,7 @@ from rest_framework.serializers import ModelSerializer
 class ListProductReviewSerializer(ModelSerializer):
     class Meta:
         model = ProductReviewModel
-        fields = ('rating', 'review',)
+        fields = ('rating', 'review', 'id',)
 
 
 class _AddProductReviewSerializer(ModelSerializer):
