@@ -49,17 +49,21 @@ class UpdateProductReviewSerializer(ModelSerializer):
         return formatted_review if dict_is_not_empty(formatted_review) else None
 
     def manually_handle_put_for_non_existing_models(self, product_instance: ProductModel,  updated_details):
+        detail_to_note = {}
+
         new_review_serializer = _AddProductReviewSerializer(
             data=updated_details)
 
         if not new_review_serializer.is_valid():
             raise ValidationError(detail=new_review_serializer.errors)
 
-        new_review = new_review_serializer.save()
+        new_review: ProductReviewModel = new_review_serializer.save()
 
         product_instance.reviews.add(new_review)
 
-        return new_review
+        detail_to_note['id'] = new_review.id
+
+        return detail_to_note
 
     def manually_handle_put_for_existing_models(self, product_instance: ProductModel, updated_details):
         if not check_key(updated_details, 'id'):
