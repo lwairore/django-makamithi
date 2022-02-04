@@ -1,3 +1,4 @@
+from custom_utils.is_a_number_util import is_a_number
 from django.db.models.query import QuerySet
 from rest_framework.exceptions import ValidationError
 from product.submodels.product import ProductModel
@@ -45,6 +46,14 @@ class UpdateProductReviewSerializer(ModelSerializer):
 
             if string_is_not_empty(value_for_review):
                 formatted_review['review'] = value_for_review
+
+        if dict_is_not_empty(formatted_review) and check_key(request_data, 'id'):
+            value_for_id = request_data.get('id')
+
+            if not is_a_number(value_for_id):
+                return None
+
+            formatted_review['id'] = value_for_id
 
         return formatted_review if dict_is_not_empty(formatted_review) else None
 
