@@ -12,9 +12,28 @@ from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.status import HTTP_404_NOT_FOUND, HTTP_400_BAD_REQUEST
 from rest_framework.views import APIView
 
+
 class RetrieveDeleteProductAPIView(APIView):
     permission_classes = (AllowAny,)
-    
+
+    def _get_product_instance(self, product_id: int):
+        product_instance = None
+
+        try:
+            reviews_kueryset = ProductReviewModel.objects\
+                .order_by()
+
+            reviews_prefetch_related = Prefetch(
+                'reviews', queryset=reviews_kueryset)
+
+            product_instance = ProductModel.objects\
+                .prefetch_related(reviews_prefetch_related).get(id=product_id)
+
+            return product_instance
+
+        except ProductModel.DoesNotExist as product_does_not_exist:
+            raise product_does_not_exist
+
 
 class ListUpdateProductReviewAPIView(APIView):
     permission_classes = (AllowAny,)
