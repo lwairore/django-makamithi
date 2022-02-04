@@ -10,6 +10,8 @@ _ADD_PRODUCT_REVIEW_URL_ROUTE = 'add/'
 
 _RETRIEVE_PRODUCT_REVIEW_URL_ROUTE = '<int:product_review_id>/'
 
+_DELETE_PRODUCT_REVIEW_URL_ROUTE = f'{_RETRIEVE_PRODUCT_REVIEW_URL_ROUTE}delete'
+
 urlpatterns = [
     # List reviews for a particular product
     path(_LIST_PRODUCT_REVIEW_URL_ROUTE,
@@ -20,5 +22,9 @@ urlpatterns = [
 
     # Retrieve product review details
     path(_RETRIEVE_PRODUCT_REVIEW_URL_ROUTE,
+         RetrieveDeleteProductAPIView.as_view()),
+
+    # Delete product review details
+    path(_DELETE_PRODUCT_REVIEW_URL_ROUTE,
          RetrieveDeleteProductAPIView.as_view()),
 ]
