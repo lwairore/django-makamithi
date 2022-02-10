@@ -1,6 +1,6 @@
-from django.db.models import Model
+from django.db.models import Model, PROTECT
 from django.db.models.fields import CharField, DateTimeField, TextField
-from django.db.models.fields.related import ManyToManyField
+from django.db.models.fields.related import ForeignKey, ManyToManyField
 
 
 class BannerAdModel(Model):
@@ -8,7 +8,7 @@ class BannerAdModel(Model):
     description = TextField(max_length=250, blank=True, null=True)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
-    photos = ManyToManyField('PhotoModel', blank=True)
+    photo = ForeignKey('PhotoModel', blank=True, null=True, on_delete=PROTECT)
 
     def __str__(self) -> str:
         return self.title
