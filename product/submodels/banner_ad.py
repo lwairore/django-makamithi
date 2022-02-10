@@ -1,5 +1,6 @@
 from django.db.models import Model
 from django.db.models.fields import CharField, DateTimeField, TextField
+from django.db.models.fields.related import ManyToManyField
 
 
 class BannerAdModel(Model):
@@ -7,6 +8,7 @@ class BannerAdModel(Model):
     description = TextField(max_length=140)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
+    photos = ManyToManyField('PhotoModel', blank=True)
 
     def __str__(self) -> str:
         return self.title
