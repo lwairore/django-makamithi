@@ -10,6 +10,7 @@ class _RetrievePhotoModelModelSerializer(ModelSerializer):
 
 
 class RetrieveAboutSectionSerializer(ModelSerializer):
+    photo = _RetrievePhotoModelModelSerializer(required=False)
 
     class Meta:
         model = AboutSectionModel
