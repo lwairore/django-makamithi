@@ -32,7 +32,7 @@ admin.site.site_url = "https://makamithi.com/"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('banner-ad/', include(
+    path('home/', include(
         f'{HomeTwoConfig.name}.urls')),
     # path('products/', include('product.urls')),
 ]
