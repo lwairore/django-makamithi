@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     # Product application
-    'product.apps.ProductConfig',
+    # 'product.apps.ProductConfig',
     # Home application
     'home.apps.HomeConfig',
 ]
