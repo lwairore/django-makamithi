@@ -16,7 +16,7 @@ class ListBannerAdAPIView(APIView):
             .select_related('photo')\
             .order_by()\
             .only('title', 'description', 'photo__image',
-                  'photo__caption')
+                  'photo__caption').all()
 
         return banner_kueryset
 
