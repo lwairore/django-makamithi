@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'corsheaders',
     # Product application
     'product.apps.ProductConfig',
+    # Home application
+    'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
