@@ -1,4 +1,4 @@
-from product.submodels.banner_ad import BannerAdModel
+from home.submodels.banner_ad import BannerAdModel
 from django.contrib.admin import ModelAdmin, register
 from django.utils.html import format_html
 

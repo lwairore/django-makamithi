@@ -1,9 +1,8 @@
 from rest_framework.response import Response
-from product.serializers.banner_ad import ListBannerAdModelSerializer
+from home.serializers.banner_ad import ListBannerAdModelSerializer
 from django.db.models.query import Prefetch
-from product.submodels import banner_ad
 from product.submodels.preview_item import PhotoModel
-from product.submodels.banner_ad import BannerAdModel
+from home.submodels.banner_ad import BannerAdModel
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 
