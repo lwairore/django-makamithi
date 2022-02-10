@@ -3,5 +3,4 @@ from .price import PriceModelAdmin
 from .product import ProductModelAdmin
 from .unit_of_measurement import UnitOfMeasurementModelAdmin
 from .rating_scale import ProductReviewModelAdmin
-from .banner_ad import BannerAdModelAdmin
 from .preview_item import PhotoModelAdmin
