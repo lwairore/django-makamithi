@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from home_two.apps import HomeTwoConfig
 from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
@@ -31,5 +32,7 @@ admin.site.site_url = "https://makamithi.com/"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('banner-ad/', include(
+        f'{HomeTwoConfig.name}.urls')),
     # path('products/', include('product.urls')),
 ]
