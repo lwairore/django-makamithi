@@ -12,16 +12,11 @@ class ListBannerAdAPIView(APIView):
     _serializer_class = ListBannerAdModelSerializer
 
     def _get_banner_ad_kueryset(self):
-        photos_kueryset = PhotoModel.objects\
-            .order_by().only('image', 'caption',)
-
-        photos_prefetch_related = Prefetch(
-            'photos', queryset=photos_kueryset)
-
         banner_kueryset = BannerAdModel.objects\
-            .prefetch_related(photos_prefetch_related)\
+            .select_related('photo')\
             .order_by()\
-            .only('title', 'description', 'photos')
+            .only('title', 'description', 'photo__image',
+                  'photo__caption')
 
         return banner_kueryset
 
