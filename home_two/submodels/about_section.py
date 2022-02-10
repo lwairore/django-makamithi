@@ -6,6 +6,7 @@ from django.db.models.fields.related import ForeignKey
 
 class AboutSectionModel(Model):
     heading = CharField(max_length=70)
+    subheading = CharField(max_length=35, blank=True, null=True)
     description = TextField(max_length=250, blank=True, null=True)
     photo = ForeignKey('PhotoModel', blank=True, null=True, on_delete=PROTECT)
 
