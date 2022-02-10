@@ -3,15 +3,15 @@ from home_two.submodels.banner_ad import BannerAdModel
 from rest_framework.serializers import ModelSerializer
 
 
-class _ListPhotoModelModelSerializer(ModelSerializer):
+class _RetrievePhotoModelModelSerializer(ModelSerializer):
     class Meta:
         model = PhotoModel
         fields = ('image', 'caption',)
 
 
 class ListBannerAdModelSerializer(ModelSerializer):
-    photos = _ListPhotoModelModelSerializer(many=True, required=False)
+    photo = _RetrievePhotoModelModelSerializer(required=False)
 
     class Meta:
         model = BannerAdModel
-        fields = ('title', 'description', 'photos',)
+        fields = ('title', 'description', 'photo',)
