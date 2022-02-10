@@ -13,7 +13,7 @@ class RetrieveAboutSectionAPIView(APIView):
         about_section_instance = AboutSectionModel.objects\
             .select_related('photo')\
             .order_by()\
-            .only('heading', 'description', 'photo__image',
+            .only('heading', 'subheading', 'description', 'photo__image',
                   'photo__caption').first()
 
         return about_section_instance
