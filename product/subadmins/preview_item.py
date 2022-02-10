@@ -1,5 +1,4 @@
 from product.submodels.preview_item import PhotoModel
-from product.submodels.banner_ad import BannerAdModel
 from django.contrib.admin import ModelAdmin, register
 
 
