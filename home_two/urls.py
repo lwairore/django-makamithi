@@ -6,6 +6,6 @@ from django.urls.conf import path, include
 app_name = HomeTwoConfig.name
 
 urlpatterns = [
-    path('banner',
+    path('home/',
          include(f'{app_name}.{URL_FILE_NAME}.{BANNER_AD_URL_FILE_NAME_WITHOUT_EXTENSION}')),
 ]
