@@ -14,4 +14,4 @@ class RetrieveAboutSectionSerializer(ModelSerializer):
 
     class Meta:
         model = AboutSectionModel
-        fields = ('heading', 'description', 'photo',)
+        fields = ('heading', 'description', 'photo', 'subheading',)
