@@ -10,6 +10,8 @@ class _PhotoModelModelSerializer(ModelSerializer):
 
 
 class BannerAdModelSerializer(ModelSerializer):
+    photos = _PhotoModelModelSerializer(many=True, required=False)
+
     class Meta:
         model = BannerAdModel
         fields = ('title', 'description', 'photos',)
