@@ -9,7 +9,7 @@ class _ListPhotoModelModelSerializer(ModelSerializer):
         fields = ('image', 'caption',)
 
 
-class BannerAdModelSerializer(ModelSerializer):
+class ListBannerAdModelSerializer(ModelSerializer):
     photos = _ListPhotoModelModelSerializer(many=True, required=False)
 
     class Meta:
