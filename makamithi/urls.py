@@ -31,5 +31,5 @@ admin.site.site_url = "https://makamithi.com/"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('products/', include('product.urls')),
+    # path('products/', include('product.urls')),
 ]
