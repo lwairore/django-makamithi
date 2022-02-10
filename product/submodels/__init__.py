@@ -4,3 +4,4 @@ from .product import ProductModel
 from .unit_of_measurement import UnitOfMeasurementModel
 from .rating_scale import ProductReviewModel
 from .banner_ad import BannerAdModel
+from .preview_item import PhotoModel
