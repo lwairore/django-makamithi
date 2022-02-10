@@ -1,4 +1,4 @@
-from product.submodels.preview_item import PhotoModel
+from home.submodels.preview_item import PhotoModel
 from django.contrib.admin import ModelAdmin, register
 
 
