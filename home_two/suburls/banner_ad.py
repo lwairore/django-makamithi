@@ -4,7 +4,7 @@ from django.urls import path
 
 BANNER_AD_ROOT_ROUTE = 'list/banner-ad/'
 
-BANNER_AD_URL_FILE_NAME_WITHOUT_EXTENSION = get_file_name(__file__)
+URL_FILE_NAME_WITHOUT_EXTENSION = get_file_name(__file__)
 
 _LIST_BANNER_AD_URL_ROUTE = ''
 
