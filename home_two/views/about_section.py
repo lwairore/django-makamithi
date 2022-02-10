@@ -22,6 +22,6 @@ class RetrieveAboutSectionAPIView(APIView):
         about_section_instance = self._get_about_section_instance()
 
         about_section_instance_serializer = self._serializer_class(
-            about_section_instance, many=True)
+            about_section_instance)
 
         return Response(about_section_instance_serializer.data)
