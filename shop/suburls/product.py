@@ -1,3 +1,5 @@
+from shop.views.product import ListProductAPIView
+from django.urls.conf import path
 from shop.suburls.product_category import PRODUCT_CATEGORY_ROOT_ROUTE
 from custom_utils.get_file_name_util import get_file_name
 
@@ -10,3 +12,7 @@ PRODUCT_CATEGORY_ROUTE_PARAMETER = '<int:product_category_id>'
 
 PRODUCT_ROOT_ROUTE = PRODUCT_CATEGORY_ROOT_ROUTE + \
     PRODUCT_CATEGORY_ROUTE_PARAMETER+'/products/'
+
+urlpatterns = [
+    path(_LIST_PRODUCT_ROUTE, ListProductAPIView.as_view()),
+]
