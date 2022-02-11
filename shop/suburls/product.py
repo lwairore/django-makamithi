@@ -9,4 +9,4 @@ _LIST_PRODUCT_ROUTE = 'list/'
 PRODUCT_CATEGORY_ROUTE_PARAMETER = '<int:product_category_id>'
 
 PRODUCT_ROOT_ROUTE = PRODUCT_CATEGORY_ROOT_ROUTE + \
-    '<int:product_category_id>/products'
+    PRODUCT_CATEGORY_ROUTE_PARAMETER+'/products/'
