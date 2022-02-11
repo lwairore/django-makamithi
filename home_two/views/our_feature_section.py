@@ -1,3 +1,4 @@
+from rest_framework.response import Response
 from home_two.submodels.our_feature_section import FeatureSectionModel
 from home_two.serializers.our_feature_section import RetrieveFeatureSectionSerializer
 from rest_framework.permissions import AllowAny
@@ -16,3 +17,11 @@ class RetrieveFeatureSectionAPIView(APIView):
                   'photo__caption').first()
 
         return feature_section_instance
+
+    def get(self, request):
+        feature_section_instance = self._get_feature_section_instance()
+
+        feature_section_instance_serializer = self._serializer_class(
+            feature_section_instance)
+
+        return Response(feature_section_instance_serializer.data)
