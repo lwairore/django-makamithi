@@ -10,6 +10,8 @@ class _RetrievePhotoModelModelSerializer(ModelSerializer):
 
 
 class RetrieveServiceModelSerializer(ModelSerializer):
+    photo = _RetrievePhotoModelModelSerializer(required=False)
+
     class Meta:
         model = ServiceModel
         fields = ('photo', 'id', 'title', 'summary')
