@@ -10,6 +10,7 @@ class ServiceModel(Model):
     title = CharField(max_length=80)
     summary = TextField(max_length=120, blank=True, null=True)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
+    modified_date = DateTimeField(auto_now=True, blank=True, null=True)
     
     def __str__(self) -> str:
         return self.title
