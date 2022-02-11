@@ -11,7 +11,7 @@ class RetrieveFeatureSectionAPIView(APIView):
 
     def _get_feature_section_instance(self):
         feature_section_instance = FeatureSectionModel.objects\
-            .select_related('photo', 'background_image', 'section_image',)\
+            .select_related('background_image', 'section_image',)\
             .order_by()\
             .only('summary', 'section_image__image',
                   'section_image__caption',
