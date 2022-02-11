@@ -21,6 +21,6 @@ class ListServiceAPIView(APIView):
     def get(self, request):
         service_kueryset = self._list_service()
 
-        service_kueryset_serializer = self._serializer_class(service_kueryset)
+        service_kueryset_serializer = self._serializer_class(service_kueryset, many=True)
 
         return Response(service_kueryset_serializer.data)
