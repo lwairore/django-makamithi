@@ -1,3 +1,4 @@
+from home_two.submodels.preview_item import PhotoModel
 from django.db.models import (
     Model, ForeignKey, CharField, PROTECT, ManyToManyField)
 from django.db.models.fields import DateTimeField
@@ -10,6 +11,7 @@ class ProductModel(Model):
     price = ManyToManyField('PriceModel', blank=True)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
+    photo = ForeignKey(PhotoModel, blank=True, null=True, on_delete=PROTECT)
 
     def __str__(self) -> str:
         return self.title
