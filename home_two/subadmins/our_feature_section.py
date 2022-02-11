@@ -8,4 +8,4 @@ class FeatureSectionModelAdmin(ModelAdmin):
     search_fields = ('summary',)
     date_hierarchy = 'created_at'
     list_filter = ('created_at', 'modified_date',)
-    raw_id_fields = ('background_image',)
+    raw_id_fields = ('background_image', 'section_image',)
