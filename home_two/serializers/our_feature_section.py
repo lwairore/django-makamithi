@@ -10,8 +10,9 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
 
 
 class RetrieveFeatureSectionSerializer(ModelSerializer):
-    photo = _RetrievePhotoModelSerializer(required=False)
+    background_image = _RetrievePhotoModelSerializer(required=False)
+    section_image = _RetrievePhotoModelSerializer(required=False)
 
     class Meta:
         model = FeatureSectionModel
-        fields = ('summary', 'photo',)
+        fields = ('summary', 'background_image', 'section_image',)
