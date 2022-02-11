@@ -1,1 +1,1 @@
-from .product_category import ProductCategory
+from .product_category import ProductCategoryModel

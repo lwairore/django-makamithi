@@ -5,7 +5,7 @@ from django.db.models.fields import CharField, DateTimeField, TextField
 from django.db.models.fields.related import ForeignKey
 
 
-class ProductCategory(Model):
+class ProductCategoryModel(Model):
     title = CharField(max_length=80)
     flaticon = CharField(max_length=36, blank=True, null=True)
     description = TextField(max_length=250, blank=True, null=True)
