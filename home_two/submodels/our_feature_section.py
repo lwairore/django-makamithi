@@ -5,13 +5,13 @@ from django.db.models.fields.related import ForeignKey
 
 
 class FeatureSectionModel(Model):
-    description = TextField(max_length=250, blank=True, null=True)
+    summary = TextField(max_length=250, blank=True, null=True)
     photo = ForeignKey('PhotoModel', blank=True, null=True, on_delete=PROTECT)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
 
     def __str__(self) -> str:
-        return self.description
+        return self.summary
 
     class Meta:
         verbose_name = 'Feature section'
