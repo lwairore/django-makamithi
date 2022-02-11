@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'home_two.apps.HomeTwoConfig',
     # Service application
     'service.apps.ServiceConfig',
+    # Shop application
+    'shop.apps.ShopConfig',
 ]
 
 MIDDLEWARE = [
