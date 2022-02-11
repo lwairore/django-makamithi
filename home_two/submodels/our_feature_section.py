@@ -6,7 +6,12 @@ from django.db.models.fields.related import ForeignKey
 
 class FeatureSectionModel(Model):
     summary = TextField(max_length=250, blank=True, null=True)
-    photo = ForeignKey('PhotoModel', blank=True, null=True, on_delete=PROTECT)
+    background_image = ForeignKey(
+        'PhotoModel', blank=True, null=True, on_delete=PROTECT,
+        related_name='background_image')
+    section_image = ForeignKey(
+        'PhotoModel', blank=True, null=True, on_delete=PROTECT,
+        related_name='section_image')
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
 
