@@ -8,6 +8,7 @@ from django.db.models.fields.related import ForeignKey
 class ProductCategory(Model):
     photo = ForeignKey(PhotoModel, blank=True, null=True, on_delete=PROTECT)
     title = CharField(max_length=80)
+    flaticon = CharField(max_length=36, blank=True, null=True)
     description = TextField(max_length=250, blank=True, null=True)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
