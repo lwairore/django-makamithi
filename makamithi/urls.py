@@ -34,6 +34,8 @@ admin.site.site_url = "https://makamithi.com/"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # URLConfs for `home` application
     path('home/', include(
         f'{HomeTwoConfig.name}.urls')),
     # path('products/', include('product.urls')),
