@@ -1,3 +1,4 @@
+from rest_framework.response import Response
 from service.submodels.service import ServiceModel
 from service.serializers.service import RetrieveServiceModelSerializer
 from rest_framework.permissions import AllowAny
@@ -16,3 +17,10 @@ class ListServiceAPIView(APIView):
             .all()
 
         return service_kueryset
+
+    def get(self, request):
+        service_kueryset = self._list_service()
+
+        service_kueryset_serializer = self._serializer_class(service_kueryset)
+
+        return Response(service_kueryset_serializer.data)
