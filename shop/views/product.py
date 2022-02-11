@@ -25,8 +25,8 @@ class ListProductAPIView(APIView):
 
     def _list_product_kueryset(self, product_category_id: int) -> QuerySet:
         product_kueryset = ProductModel.objects.only(
-            'title', 'flaticon', 'description', 'id')\
-            .order_by().all()
+            'title', 'description', 'id')\
+            .order_by().filter(category__id=product_category_id)
 
         return product_kueryset
 
