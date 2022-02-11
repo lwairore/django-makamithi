@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from service.apps import ServiceConfig
+from shop.apps import ShopConfig
 from home_two.apps import HomeTwoConfig
 from django.conf.urls import include
 from django.contrib import admin
@@ -44,6 +45,10 @@ urlpatterns = [
     # URLConfs for `service` application
     path('service/', include(
         f'{ServiceConfig.name}.urls')),
+
+    # URLConfs for `shop` application
+    path('shop/', include(
+        f'{ShopConfig.name}.urls')),
 ]
 
 if settings.DEBUG:
