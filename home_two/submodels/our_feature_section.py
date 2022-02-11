@@ -11,7 +11,7 @@ class FeatureSectionModel(Model):
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
 
     def __str__(self) -> str:
-        return self.heading
+        return self.description
 
     class Meta:
         verbose_name = 'Feature section'
