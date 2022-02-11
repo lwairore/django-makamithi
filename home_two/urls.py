@@ -6,12 +6,18 @@ from django.urls.conf import path, include
 
 app_name = HomeTwoConfig.name
 
+
+_BASE_INCLUDE_PATH = '{}.{}.'.format(
+    app_name,
+    URL_FILE_NAME)
+
 urlpatterns = [
     # Routes for Banner-ads
     path(BANNER_AD_ROOT_ROUTE,
-         include(f'{app_name}.{URL_FILE_NAME}.{BANNER_AD_FILE_NAME_WITHOUT_EXTENSION}')),
+         include(
+             _BASE_INCLUDE_PATH + BANNER_AD_FILE_NAME_WITHOUT_EXTENSION)),
 
     #  Routes for About section
     path(ABOUT_SECTION_ROOT_ROUTE,
-         include(f'{app_name}.{URL_FILE_NAME}.{ABOUT_SECTION_FILE_NAME_WITHOUT_EXTENSION}')),
+         _BASE_INCLUDE_PATH + ABOUT_SECTION_FILE_NAME_WITHOUT_EXTENSION),
 ]
