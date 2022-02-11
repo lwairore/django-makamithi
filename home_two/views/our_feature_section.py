@@ -13,7 +13,7 @@ class RetrieveFeatureSectionAPIView(APIView):
         feature_section_instance = FeatureSectionModel.objects\
             .select_related('photo')\
             .order_by()\
-            .only('heading', 'description', 'photo__image',
+            .only('description', 'photo__image',
                   'photo__caption').first()
 
         return feature_section_instance

@@ -5,7 +5,6 @@ from django.db.models.fields.related import ForeignKey
 
 
 class FeatureSectionModel(Model):
-    heading = CharField(max_length=10)
     description = TextField(max_length=250, blank=True, null=True)
     photo = ForeignKey('PhotoModel', blank=True, null=True, on_delete=PROTECT)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)

@@ -14,4 +14,4 @@ class RetrieveFeatureSectionSerializer(ModelSerializer):
 
     class Meta:
         model = FeatureSectionModel
-        fields = ('heading', 'description', 'photo',)
+        fields = ('description', 'photo',)
