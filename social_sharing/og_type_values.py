@@ -1,3 +1,5 @@
+# You can find the most common open graph website types on the open graph webpage: https://ogp.me/#types
+
 ARTICLE_VALUES = (
     ('article', 'Article'),
     ('article:published_time',
