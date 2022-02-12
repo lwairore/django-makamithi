@@ -8,10 +8,10 @@ class FeatureSectionModel(Model):
     summary = TextField(max_length=250, blank=True, null=True)
     background_image = ForeignKey(
         'PhotoModel', blank=True, null=True, on_delete=PROTECT,
-        related_name='background_image')
+        related_name='feature_section_background_image')
     section_image = ForeignKey(
         'PhotoModel', blank=True, null=True, on_delete=PROTECT,
-        related_name='section_image')
+        related_name='feature_section_section_image')
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
 
