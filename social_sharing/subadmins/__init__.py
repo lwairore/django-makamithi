@@ -1,1 +1,1 @@
-from .og_type import OgTypeModelAdmin
+# from .og_type import OgTypeModelAdmin
