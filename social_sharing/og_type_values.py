@@ -1,6 +1,6 @@
 # You can find the most common open graph website types on the open graph webpage: https://ogp.me/#types
 
-ARTICLE_VALUES = (
+_ARTICLE_VALUES = (
     ('article', 'Article'),
     ('article:published_time',
      'Article - Published Time - When the article was first published.'),
@@ -33,4 +33,4 @@ WEBSITE_VALUES = (
     ('website', 'Website'),
 )
 
-OG_TYPE_VALUES = ARTICLE_VALUES + BOOK_VALUES + PROFILE_VALUES + WEBSITE_VALUES
+OG_TYPE_VALUES = _ARTICLE_VALUES + BOOK_VALUES + PROFILE_VALUES + WEBSITE_VALUES
