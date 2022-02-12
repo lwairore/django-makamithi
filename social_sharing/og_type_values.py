@@ -13,3 +13,10 @@ ARTICLE_VALUES = (
      'Article - Article - Section - A high-level section name. E.g. Technology'),
     ('article:tag', 'Article - Tag -Tag words associated with this article.')
 )
+
+BOOK_VALUES = (
+    ('book', 'Book'),
+    ('book:isbn', 'Book - ISBN - The ISBN'),
+    ('book:release_date', 'Book - Release date - The date the book was released.'),
+    ('book:tag', 'Book - Tag - Tag words associated with this book.')
+)
