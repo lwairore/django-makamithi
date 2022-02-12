@@ -1,7 +1,7 @@
 from social_sharing.submodels.image_aux_data import ImageAuxDataModel
 from django.db.models import Model
 from django.db.models.deletion import PROTECT
-from django.db.models.fields import CharField, PositiveIntegerField, TextField, URLField
+from django.db.models.fields import CharField, DateTimeField, PositiveIntegerField, TextField, URLField
 from django.db.models.fields.related import ForeignKey
 
 
@@ -12,4 +12,15 @@ class SeoSocialShareDataModel(Model):
     image = ForeignKey(
         ImageAuxDataModel, blank=True, null=True, on_delete=PROTECT)
     url = URLField(blank=True, null=True)
-    type = ForeignKey('OgTypeModel', blank=True, null=True, on_delete=PROTECT)
+    type = CharField(max_length=80, blank=True, null=True)
+    author = CharField(max_length=160, blank=True, null=True)
+    section = CharField(max_length=160, blank=True, null=True)
+    published = DateTimeField(auto_now=True, blank=True, null=True)
+    modified = DateTimeField(auto_now=True, blank=True, null=True)
+
+    def __str__(self) -> str:
+        return self.title
+
+    class Meta:
+        verbose_name = 'SEO social sharing detail'
+        verbose_name_plural = 'SEO social sharing details'
