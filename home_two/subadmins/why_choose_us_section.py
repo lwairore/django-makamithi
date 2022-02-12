@@ -12,9 +12,9 @@ class WhyChooseUsSectionModelAdmin(ModelAdmin):
 
     def has_add_permission(self, request):
         # check if generally has add permission
-        retVal = super().has_add_permission(request)
+        should_add_instance = super().has_add_permission(request)
         # set add permission to False, if object already exists
-        if retVal and WhyChooseUsSectionModel.objects.only('pk').exists():
-            retVal = False
+        if should_add_instance and WhyChooseUsSectionModel.objects.only('pk').exists():
+            should_add_instance = False
 
-        return retVal
+        return should_add_instance
