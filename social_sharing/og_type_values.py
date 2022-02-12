@@ -21,7 +21,7 @@ _BOOK_VALUES = (
     ('book:tag', 'Book - Tag - Tag words associated with this book.')
 )
 
-PROFILE_VALUES = (
+_PROFILE_VALUES = (
     ('profile', 'Profile'),
     ('profile:first_name', 'Profile - First Name - A name normally given to an individual by a parent or self-chosen.'),
     ('profile:last_name', 'Profile - Last Name - A name inherited from a family or marriage and by which the individual is commonly known.'),
@@ -33,4 +33,4 @@ WEBSITE_VALUES = (
     ('website', 'Website'),
 )
 
-OG_TYPE_VALUES = _ARTICLE_VALUES + _BOOK_VALUES + PROFILE_VALUES + WEBSITE_VALUES
+OG_TYPE_VALUES = _ARTICLE_VALUES + _BOOK_VALUES + _PROFILE_VALUES + WEBSITE_VALUES
