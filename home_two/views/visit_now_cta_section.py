@@ -1,3 +1,4 @@
+from home_two.serializers.visit_now_cta_section import RetrieveVisitNowCtaSectionSerializer
 from home_two.submodels.visit_now_cta_section import VisitNowCtaSectionModel
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
@@ -5,6 +6,7 @@ from rest_framework.views import APIView
 
 class RetrieveVisitNowCtaSectionAPIView(APIView):
     permission_classes = (AllowAny,)
+    _serializer_class = RetrieveVisitNowCtaSectionSerializer
 
     def _get_visit_now_cta_section_instance(self):
         visit_now_cta_section_instance = VisitNowCtaSectionModel.objects\
