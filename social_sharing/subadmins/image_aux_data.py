@@ -10,3 +10,4 @@ class ImageAuxDataModelAdmin(ModelAdmin):
     search_fields = ('width', 'height', 'secure_url',
                      'mimeType', 'alt', 'image',)
     date_hierarchy = 'created_at'
+    raw_id_fields = ('image',)
