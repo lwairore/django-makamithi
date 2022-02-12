@@ -9,3 +9,12 @@ class WhyChooseUsSectionModelAdmin(ModelAdmin):
     search_fields = ('heading', 'description',)
     date_hierarchy = 'created_at'
     raw_id_fields = ('section_image',)
+
+    def has_add_permission(self, request):
+        # check if generally has add permission
+        retVal = super().has_add_permission(request)
+        # set add permission to False, if object already exists
+        if retVal and WhyChooseUsSectionModel.objects.only('pk').exists():
+            retVal = False
+
+        return retVal
