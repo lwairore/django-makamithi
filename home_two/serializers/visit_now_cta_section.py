@@ -10,6 +10,8 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
 
 
 class RetrieveVisitNowCtaSectionSerializer(ModelSerializer):
+    background_image = _RetrievePhotoModelSerializer(required=False)
+    
     class Meta:
         model = VisitNowCtaSectionModel
         fields = ('heading', 'description',
