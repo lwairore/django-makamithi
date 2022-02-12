@@ -20,3 +20,11 @@ BOOK_VALUES = (
     ('book:release_date', 'Book - Release date - The date the book was released.'),
     ('book:tag', 'Book - Tag - Tag words associated with this book.')
 )
+
+PROFILE_VALUES = (
+    ('profile', 'Profile'),
+    ('profile:first_name', 'Profile - First Name - A name normally given to an individual by a parent or self-chosen.'),
+    ('profile:last_name', 'Profile - Last Name - A name inherited from a family or marriage and by which the individual is commonly known.'),
+    ('profile:username', 'Profile - Username - A short unique string to identify them.'),
+    ('profile:gender', 'Profile - Gender - (male, female) - Their gender.')
+)
