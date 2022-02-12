@@ -16,3 +16,6 @@ class RetrieveVisitNowCtaSectionAPIView(APIView):
                   'background_image__caption').first()
 
         return visit_now_cta_section_instance
+
+    def get(self, request):
+        pass
