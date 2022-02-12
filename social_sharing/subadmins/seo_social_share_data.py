@@ -7,4 +7,5 @@ class SeoSocialShareDataModelAdmin(ModelAdmin):
     search_fields = ('title', 'keywords', 'description',
                      'url', 'type', 'author', 'section')
     raw_id_fields = ('image',)
+    date_hierarchy = 'published'
     list_filter = ('modified', 'published',)
