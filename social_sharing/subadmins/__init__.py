@@ -1,1 +1,1 @@
-# from .og_type import OgTypeModelAdmin
+from .image_aux_data import ImageAuxDataModelAdmin
