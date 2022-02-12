@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db.models import Model
 from django.db.models.deletion import PROTECT
 from django.db.models.fields import CharField, DateTimeField, TextField
@@ -17,6 +18,18 @@ class FeatureSectionModel(Model):
 
     def __str__(self) -> str:
         return self.summary
+
+    def clean(self):
+        if FeatureSectionModel.objects.exists() and not self.pk:
+            raise ValidationError("You can only have one company")
+
+    def save(self, *args, **kwargs):
+        if not self.pk and FeatureSectionModel.objects.exists():
+            # if you'll not check for self.pk
+            # then error will also raised in update of exists model
+            raise ValidationError(
+                'There is can be only one "FeatureSectionModel" instance')
+        return super(FeatureSectionModel, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Feature section'
