@@ -1,3 +1,4 @@
+from rest_framework.response import Response
 from home_two.submodels import why_choose_us_section
 from home_two.serializers.why_choose_us_section import RetrieveWhyChooseUsSectionSerializer
 from rest_framework.permissions import AllowAny
@@ -16,3 +17,11 @@ class RetrieveWhyChooseUsSectionAPIView(APIView):
                   'section_image__caption',).first()
 
         return why_choose_us_section_instance
+
+    def get(self, request):
+        why_choose_us_section_instance = self._get_why_choose_us_section_instance()
+
+        why_choose_us_section_instance_serializer = self._serializer_class(
+            why_choose_us_section_instance)
+
+        return Response(why_choose_us_section_instance_serializer.data)
