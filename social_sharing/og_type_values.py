@@ -28,3 +28,7 @@ PROFILE_VALUES = (
     ('profile:username', 'Profile - Username - A short unique string to identify them.'),
     ('profile:gender', 'Profile - Gender - (male, female) - Their gender.')
 )
+
+WEBSITE_VALUES = (
+    ('website', 'Website'),
+)
