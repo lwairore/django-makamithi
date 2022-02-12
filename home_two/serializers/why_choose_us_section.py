@@ -10,6 +10,8 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
 
 
 class RetrieveWhyChooseUsSectionSerializer(ModelSerializer):
+    background_image = _RetrievePhotoModelSerializer(required=False)
+    
     class Meta:
         model = WhyChooseUsSectionModel
         fields = ('heading', 'description', 'section_image',)
