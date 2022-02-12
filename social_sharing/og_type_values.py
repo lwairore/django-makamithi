@@ -14,7 +14,7 @@ _ARTICLE_VALUES = (
     ('article:tag', 'Article - Tag -Tag words associated with this article.')
 )
 
-BOOK_VALUES = (
+_BOOK_VALUES = (
     ('book', 'Book'),
     ('book:isbn', 'Book - ISBN - The ISBN'),
     ('book:release_date', 'Book - Release date - The date the book was released.'),
@@ -33,4 +33,4 @@ WEBSITE_VALUES = (
     ('website', 'Website'),
 )
 
-OG_TYPE_VALUES = _ARTICLE_VALUES + BOOK_VALUES + PROFILE_VALUES + WEBSITE_VALUES
+OG_TYPE_VALUES = _ARTICLE_VALUES + _BOOK_VALUES + PROFILE_VALUES + WEBSITE_VALUES
