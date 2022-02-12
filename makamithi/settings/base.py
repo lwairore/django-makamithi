@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'service.apps.ServiceConfig',
     # Shop application
     'shop.apps.ShopConfig',
+    # Social sharing application
+    'social_sharing.apps.SocialSharingConfig',
 ]
 
 MIDDLEWARE = [
