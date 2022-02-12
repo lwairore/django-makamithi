@@ -1,1 +1,2 @@
 from .image_aux_data import ImageAuxDataModelAdmin
+from .seo_social_share_data import SeoSocialShareDataModelAdmin
