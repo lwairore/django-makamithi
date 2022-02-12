@@ -6,7 +6,7 @@ from django.db.models.fields.related import ForeignKey
 
 class VisitNowCtaSectionModel(Model):
     heading = CharField(max_length=60)
-    description = TextField(max_length=150, blank=True, null=True)
+    description = TextField(max_length=255, blank=True, null=True)
     background_image = ForeignKey(
         'PhotoModel', blank=True, null=True, on_delete=PROTECT,
         related_name='visit_now_cta_section_background_image')
