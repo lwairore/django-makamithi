@@ -29,8 +29,8 @@ _PROFILE_VALUES = (
     ('profile:gender', 'Profile - Gender - (male, female) - Their gender.')
 )
 
-WEBSITE_VALUES = (
+_WEBSITE_VALUES = (
     ('website', 'Website'),
 )
 
-OG_TYPE_VALUES = _ARTICLE_VALUES + _BOOK_VALUES + _PROFILE_VALUES + WEBSITE_VALUES
+OG_TYPE_VALUES = _ARTICLE_VALUES + _BOOK_VALUES + _PROFILE_VALUES + _WEBSITE_VALUES
