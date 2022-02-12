@@ -22,5 +22,6 @@ class SeoSocialShareDataModel(Model):
         return self.title
 
     class Meta:
+        abstract = True
         verbose_name = 'SEO social sharing detail'
         verbose_name_plural = 'SEO social sharing details'
