@@ -9,6 +9,8 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
 
 
 class RetrieveGallerySectionModelSerializer(ModelSerializer):
+    section_image = _RetrievePhotoModelSerializer(required=False)
+    
     class Meta:
         model = GallerySectionModel
         fields = ('heading', 'summary', 'section_image',)
