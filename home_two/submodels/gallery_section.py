@@ -8,8 +8,12 @@ from django.db.models.fields.related import ForeignKey
 class GallerySectionModel(Model):
     heading = CharField(max_length=60)
     summary = TextField(max_length=255, blank=True, null=True)
+    background_image = ForeignKey(
+        'PhotoModel', blank=True, null=True, on_delete=PROTECT,
+        related_name='gallery_section_background_image')
     section_image = ForeignKey(
-        'PhotoModel', blank=True, null=True, on_delete=PROTECT, )
+        'PhotoModel', blank=True, null=True, on_delete=PROTECT,
+        related_name='gallery_section_section_image')
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
 
