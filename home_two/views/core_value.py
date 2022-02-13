@@ -6,7 +6,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 
 
-class CoreValueAPIView(APIView):
+class ListCoreValueAPIView(APIView):
     permission_classes = (AllowAny,)
     _serializer_class = CoreValueModelSerializer
 
