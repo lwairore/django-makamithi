@@ -18,3 +18,11 @@ class RetrieveHomeSEODetailsAPIView(APIView):
                   'url', 'type', 'author', 'section', 'published', 'modified')
 
         return home_seo_details_instance
+
+    def get(self, request):
+        home_seo_details_instance = self._get_home_seo_details_instance()
+
+        home_seo_details_instance_serializer = self._serializer_class(
+            home_seo_details_instance)
+
+        return Response(home_seo_details_instance_serializer.data)
