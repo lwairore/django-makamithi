@@ -2,6 +2,7 @@ from home_two.submodels.seo import HomeSEODetailsModel
 from rest_framework.serializers import ModelSerializer
 
 
+
 class RetrieveHomeSEODetailsSerializer(ModelSerializer):
     class Meta:
         model = HomeSEODetailsModel
