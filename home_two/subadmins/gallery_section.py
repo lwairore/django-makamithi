@@ -7,7 +7,7 @@ class GallerySectionModelAdmin(ModelAdmin):
     search_fields = ('summary', 'heading',)
     date_hierarchy = 'created_at'
     raw_id_fields = ('section_image',)
-    list_display = ('heading', 'summary', 'section_image',
+    list_display = ('heading', 'summary', 'section_image', 'background_image',
                     'modified_date', 'created_at',)
     list_filter = ('modified_date', 'created_at',)
 
