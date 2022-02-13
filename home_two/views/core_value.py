@@ -1,3 +1,4 @@
+from rest_framework.response import Response
 from django.db.models.query import QuerySet
 from home_two.submodels.core_value import CoreValueModel
 from home_two.serializers.core_value import CoreValueModelSerializer
@@ -15,3 +16,11 @@ class CoreValueAPIView(APIView):
                              'image__caption', 'id',)
 
         return core_value_kueryset
+
+    def get(self, request):
+        core_value_kueryset = self._list_core_value_kueryset()
+
+        core_value_kueryset_serializer = self._serializer_class(core_value_kueryset,
+                                                                many=True)
+
+        return Response(core_value_kueryset_serializer.data)
