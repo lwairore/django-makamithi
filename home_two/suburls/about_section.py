@@ -6,7 +6,7 @@ URL_FILE_NAME_WITHOUT_EXTENSION = get_file_name(__file__)
 
 _RETRIEVE_ABOUT_SECTION_ROUTE = ''
 
-ABOUT_SECTION_ROOT_ROUTE = 'retrieve/about-section/'
+ABOUT_SECTION_ROOT_ROUTE = 'retrieve/section/about/'
 
 urlpatterns = [
     path(_RETRIEVE_ABOUT_SECTION_ROUTE, RetrieveAboutSectionAPIView.as_view()),
