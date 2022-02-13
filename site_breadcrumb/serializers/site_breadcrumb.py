@@ -9,7 +9,7 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
         fields = ('image', 'caption',)
 
 
-class ListSiteBreadcrumbModelSerializer(ModelSerializer):
+class RetrieveSiteBreadcrumbModelSerializer(ModelSerializer):
     image = _RetrievePhotoModelSerializer(required=False)
 
     class Meta:
