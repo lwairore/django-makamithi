@@ -3,9 +3,9 @@ from django.contrib.admin import ModelAdmin, register
 from django.forms import ModelForm
 
 
-class GalleryModelForm(ModelForm):
+class _GalleryModelForm(ModelForm):
     def __init__(self, *args, **kwargs):
-        super(GalleryModelForm, self).__init__(*args, **kwargs)
+        super(_GalleryModelForm, self).__init__(*args, **kwargs)
         self.fields['image'].required = True
 
     class Meta:
@@ -15,7 +15,7 @@ class GalleryModelForm(ModelForm):
 
 @register(GalleryModel)
 class GalleryModelAdmin(ModelAdmin):
-    form = GalleryModelForm
+    form = _GalleryModelForm
     list_display = ('id', 'image',)
     date_hierarchy = 'created_at'
     raw_id_fields = ('image',)
