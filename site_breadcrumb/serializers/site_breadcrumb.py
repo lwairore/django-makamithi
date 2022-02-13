@@ -4,6 +4,8 @@ from rest_framework.serializers import ModelSerializer
 
 
 class ListSiteBreadcrumbModelSerializer(ModelSerializer):
+    image = _RetrievePhotoModelSerializer(required=False)
+
     class Meta:
         model = SiteBreadcrumbModel
         fields = ('image', 'id',)
