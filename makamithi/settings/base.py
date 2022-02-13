@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'social_sharing.apps.SocialSharingConfig',
     # Gallery application
     'gallery.apps.GalleryConfig',
+    # Site breadcrumb application
+    'site_breadcrumb.apps.SiteBreadcrumbConfig',
 ]
 
 MIDDLEWARE = [
