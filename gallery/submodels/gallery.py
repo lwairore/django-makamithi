@@ -9,6 +9,7 @@ class GalleryModel(Model):
     image = ForeignKey(
         PhotoModel, blank=True, null=True, on_delete=PROTECT)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
+    modified_date = DateTimeField(auto_now=True, blank=True, null=True)
 
     def __str__(self) -> str:
         return f'Gallery ID={self.id}'
