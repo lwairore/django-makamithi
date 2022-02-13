@@ -5,3 +5,4 @@ from .our_feature_section import FeatureSectionModelAdmin
 from .visit_now_cta_section import VisitNowCtaSectionModelAdmin
 from .why_choose_us_section import WhyChooseUsSectionModelAdmin
 from .seo import HomeSEODetailsModelAdmin
+from .core_value import CoreValueModelAdmin
