@@ -9,6 +9,8 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
 
 
 class CoreValueModelSerializer(ModelSerializer):
+    image = _RetrievePhotoModelSerializer(required=False)
+
     class Meta:
         model = CoreValueModel
         fields = ('title', 'description', 'image', 'id',)
