@@ -6,3 +6,5 @@ HOME_SEO_DETAILS_ROOT_ROUTE = 'retrieve/seo/home/'
 URL_FILE_NAME_WITHOUT_EXTENSION = get_file_name(__file__)
 
 _RETRIEVE_HOME_SEO_DETAILS_URL_ROUTE = ''
+
+urlpatterns = []
