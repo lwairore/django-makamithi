@@ -1,4 +1,4 @@
-from social_sharing.submodels.image_aux_data import ImageAuxDataModel
+from home_two.submodels.preview_item import PhotoModel
 from django.db.models import Model
 from django.db.models.deletion import PROTECT
 from django.db.models.fields import CharField, DateTimeField, PositiveIntegerField, TextField, URLField
@@ -10,7 +10,7 @@ class SeoSocialShareDataModel(Model):
     keywords = CharField(max_length=80, blank=True, null=True)
     description = TextField(max_length=466, blank=True, null=True)
     image = ForeignKey(
-        ImageAuxDataModel, blank=True, null=True, on_delete=PROTECT)
+        PhotoModel, blank=True, null=True, on_delete=PROTECT)
     url = URLField(blank=True, null=True)
     type = CharField(max_length=80, blank=True, null=True)
     author = CharField(max_length=160, blank=True, null=True)
