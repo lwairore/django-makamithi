@@ -15,7 +15,7 @@ class RetrieveHomeSEODetailsAPIView(APIView):
             .order_by()\
             .only('title', 'keywords', 'description',
                   'image__width', 'image__height', 'image__image', 'image__caption',
-                  'url', 'type', 'author', 'section', 'published', 'modified')\
+                  'type', 'author', 'section', 'published', 'modified')\
             .first()
 
         return home_seo_details_instance

@@ -9,4 +9,4 @@ class RetrieveHomeSEODetailsSerializer(ModelSerializer):
     class Meta:
         model = HomeSEODetailsModel
         fields = ('title', 'keywords', 'description', 'image',
-                  'url', 'type', 'author', 'section', 'published', 'modified')
+                  'type', 'author', 'section', 'published', 'modified')
