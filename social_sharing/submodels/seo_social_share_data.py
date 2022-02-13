@@ -11,7 +11,6 @@ class SeoSocialShareDataModel(Model):
     description = TextField(max_length=466, blank=True, null=True)
     image = ForeignKey(
         PhotoModel, blank=True, null=True, on_delete=PROTECT)
-    url = URLField(blank=True, null=True)
     type = CharField(max_length=80, blank=True, null=True)
     author = CharField(max_length=160, blank=True, null=True)
     section = CharField(max_length=160, blank=True, null=True)
