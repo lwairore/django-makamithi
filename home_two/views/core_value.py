@@ -1,14 +1,14 @@
 from rest_framework.response import Response
 from django.db.models.query import QuerySet
 from home_two.submodels.core_value import CoreValueModel
-from home_two.serializers.core_value import CoreValueModelSerializer
+from home_two.serializers.core_value import RetrieveCoreValueModelSerializer
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 
 
 class ListCoreValueAPIView(APIView):
     permission_classes = (AllowAny,)
-    _serializer_class = CoreValueModelSerializer
+    _serializer_class = RetrieveCoreValueModelSerializer
 
     def _list_core_value_kueryset(self):
         core_value_kueryset: QuerySet = CoreValueModel.objects\
