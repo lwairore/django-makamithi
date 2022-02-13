@@ -16,3 +16,11 @@ class ListHomeGalleryAPIView(APIView):
             .order_by().all()
 
         return gallery_kueryset
+
+    def get(self, request):
+        gallery_kueryset = self._list_gallery_kueryset()
+
+        gallery_kueryset_serializer = self._serializer_class(
+            gallery_kueryset, many=True)
+
+        return Response(gallery_kueryset_serializer.data)
