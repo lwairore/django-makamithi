@@ -1,3 +1,5 @@
+from home_two.suburls.seo import (HOME_SEO_DETAILS_ROOT_ROUTE,
+                                  URL_FILE_NAME_WITHOUT_EXTENSION as HOME_SEO_DETAILS_URL_FILE_NAME_WITHOUT_EXTENSION)
 from home_two.suburls.why_choose_us_section import (
     WHY_CHOOSE_US_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as WHY_CHOOSE_US_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from home_two.suburls.visit_now_cta_section import (
@@ -40,4 +42,8 @@ urlpatterns = [
     # Routes for Why choose us section
     path(WHY_CHOOSE_US_SECTION_ROOT_ROUTE,
          include(_BASE_INCLUDE_PATH + WHY_CHOOSE_US_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
+
+    # Routes for Home SEO Details
+    path(HOME_SEO_DETAILS_ROOT_ROUTE,
+         include(_BASE_INCLUDE_PATH + HOME_SEO_DETAILS_URL_FILE_NAME_WITHOUT_EXTENSION)),
 ]
