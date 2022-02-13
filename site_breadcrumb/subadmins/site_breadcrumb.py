@@ -11,3 +11,12 @@ class SiteBreadcrumbModelForm(ModelForm):
     class Meta:
         model = SiteBreadcrumbModel
         fields = '__all__'
+
+
+@register(SiteBreadcrumbModel)
+class SiteBreadcrumbModelAdmin(ModelAdmin):
+    form = SiteBreadcrumbModelForm
+    list_display = ('id', 'image',)
+    date_hierarchy = 'created_at'
+    raw_id_fields = ('image',)
+    list_filter = ('modified_date', 'created_at',)
