@@ -2,7 +2,7 @@ from home_two.views.visit_now_cta_section import RetrieveVisitNowCtaSectionAPIVi
 from django.urls import path
 from custom_utils.get_file_name_util import get_file_name
 
-VISIT_NOW_CTA_SECTION_ROOT_ROUTE = 'retrieve/visit-now-cta-section/'
+VISIT_NOW_CTA_SECTION_ROOT_ROUTE = 'retrieve/section/visit-now-cta/'
 
 URL_FILE_NAME_WITHOUT_EXTENSION = get_file_name(__file__)
 
