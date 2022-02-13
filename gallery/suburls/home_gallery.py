@@ -1,0 +1,1 @@
+HOME_GALLERY_ROOT_ROUTE = 'list/'
