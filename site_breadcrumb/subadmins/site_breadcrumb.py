@@ -3,9 +3,9 @@ from django.contrib.admin import ModelAdmin, register
 from django.forms import ModelForm
 
 
-class SiteBreadcrumbModelForm(ModelForm):
+class _SiteBreadcrumbModelForm(ModelForm):
     def __init__(self, *args, **kwargs):
-        super(SiteBreadcrumbModelForm, self).__init__(*args, **kwargs)
+        super(_SiteBreadcrumbModelForm, self).__init__(*args, **kwargs)
         self.fields['image'].required = True
 
     class Meta:
@@ -15,7 +15,7 @@ class SiteBreadcrumbModelForm(ModelForm):
 
 @register(SiteBreadcrumbModel)
 class SiteBreadcrumbModelAdmin(ModelAdmin):
-    form = SiteBreadcrumbModelForm
+    form = _SiteBreadcrumbModelForm
     list_display = ('id', 'image',)
     date_hierarchy = 'created_at'
     raw_id_fields = ('image',)
