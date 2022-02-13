@@ -18,3 +18,11 @@ class RetrieveGallerySectionAPIView(APIView):
             .first()
 
         return gallery_section_instance
+
+    def get(self, request):
+        gallery_section_instance = self._get_gallery_section_instance()
+
+        gallery_section_instance_serializer = self._serializer_class(
+            gallery_section_instance)
+
+        return Response(gallery_section_instance_serializer.data)
