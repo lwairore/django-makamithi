@@ -8,7 +8,6 @@ from django.db.models.fields.related import ForeignKey
 class ImageAuxDataModel(Model):
     width = PositiveIntegerField(blank=True, null=True)
     height = PositiveIntegerField(blank=True, null=True)
-    secure_url = URLField(blank=True, null=True)
     mimeType = CharField(max_length=128, blank=True, null=True)
     image = ForeignKey(
         PhotoModel, blank=True, null=True, on_delete=PROTECT)
