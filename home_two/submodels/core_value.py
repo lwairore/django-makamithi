@@ -3,6 +3,7 @@ from django.db.models.deletion import PROTECT
 from django.db.models.fields import CharField, DateTimeField, TextField
 from django.db.models.fields.related import ForeignKey
 
+
 class CoreValueModel(Model):
     title = CharField(max_length=90)
     description = TextField(max_length=255, blank=True, null=True)
@@ -17,4 +18,3 @@ class CoreValueModel(Model):
     class Meta:
         verbose_name = 'Core value'
         verbose_name_plural = 'Core values'
-        
