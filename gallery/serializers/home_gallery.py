@@ -14,4 +14,4 @@ class ListHomeGallerySerializer(ModelSerializer):
 
     class Meta:
         model = GalleryModel
-        fields = ('image',)
+        fields = ('image', 'id',)
