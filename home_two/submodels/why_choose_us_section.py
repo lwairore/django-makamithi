@@ -26,7 +26,7 @@ class WhyChooseUsSectionModel(Model):
             # if you'll not check for self.pk
             # then error will also raised in update of exists model
             raise ValidationError(
-                'There is can be only one "WhyChooseUsSectionModel" instance')
+                'There can be only one "WhyChooseUsSectionModel" instance')
         return super(WhyChooseUsSectionModel, self).save(*args, **kwargs)
 
     class Meta:

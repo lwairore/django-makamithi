@@ -13,7 +13,7 @@ class HomeSEODetailsModel(SeoSocialShareDataModel):
             # if you'll not check for self.pk
             # then error will also raised in update of exists model
             raise ValidationError(
-                'There is can be only one "HomeSEODetailsModel" instance')
+                'There can be only one "HomeSEODetailsModel" instance')
         return super(HomeSEODetailsModel, self).save(*args, **kwargs)
 
     class Meta:

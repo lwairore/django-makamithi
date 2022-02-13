@@ -28,7 +28,7 @@ class FeatureSectionModel(Model):
             # if you'll not check for self.pk
             # then error will also raised in update of exists model
             raise ValidationError(
-                'There is can be only one "FeatureSectionModel" instance')
+                'There can be only one "FeatureSectionModel" instance')
         return super(FeatureSectionModel, self).save(*args, **kwargs)
 
     class Meta:
