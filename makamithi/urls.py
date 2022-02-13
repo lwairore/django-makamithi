@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from site_breadcrumb.apps import SiteBreadcrumbConfig
 from gallery.apps import GalleryConfig
 from service.apps import ServiceConfig
 from shop.apps import ShopConfig
@@ -54,6 +55,10 @@ urlpatterns = [
     # URLConfs for `gallery` application
     path('gallery/', include(
         f'{GalleryConfig.name}.urls')),
+
+    # URLConfs for `site_breadcrumb` application
+    path('site-breadcrumb/', include(
+        f'{SiteBreadcrumbConfig.name}.urls')),
 ]
 
 if settings.DEBUG:
