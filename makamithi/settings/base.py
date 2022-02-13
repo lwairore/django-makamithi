@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     # Social sharing application
     'social_sharing.apps.SocialSharingConfig',
+    # Gallery application
+    'gallery.apps.GalleryConfig',
 ]
 
 MIDDLEWARE = [
