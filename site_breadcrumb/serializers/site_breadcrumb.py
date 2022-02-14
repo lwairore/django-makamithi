@@ -14,4 +14,4 @@ class RetrieveSiteBreadcrumbModelSerializer(ModelSerializer):
 
     class Meta:
         model = SiteBreadcrumbModel
-        fields = ('background_image', 'id',)
+        fields = ('background_image',)
