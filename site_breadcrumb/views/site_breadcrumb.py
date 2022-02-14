@@ -17,3 +17,11 @@ class RetrieveSiteBreadcrumbModelAPIView(APIView):
             .order_by().first()
 
         return site_breadcrumb_instance
+
+    def get(self, request):
+        site_breadcrumb_instance = self._get_site_breadcrumb_instance()
+
+        site_breadcrumb_instance_serializer = self._serializer_class(
+            site_breadcrumb_instance)
+
+        return Response(site_breadcrumb_instance_serializer.data)
