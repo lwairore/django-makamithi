@@ -6,7 +6,7 @@ from django.forms import ModelForm
 class _SiteBreadcrumbModelForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(_SiteBreadcrumbModelForm, self).__init__(*args, **kwargs)
-        self.fields['image'].required = True
+        self.fields['background_image'].required = True
 
     class Meta:
         model = SiteBreadcrumbModel
@@ -16,7 +16,7 @@ class _SiteBreadcrumbModelForm(ModelForm):
 @register(SiteBreadcrumbModel)
 class SiteBreadcrumbModelAdmin(ModelAdmin):
     form = _SiteBreadcrumbModelForm
-    list_display = ('id', 'image',)
+    list_display = ('id', 'background_image',)
     date_hierarchy = 'created_at'
-    raw_id_fields = ('image',)
+    raw_id_fields = ('background_image',)
     list_filter = ('modified_date', 'created_at',)
