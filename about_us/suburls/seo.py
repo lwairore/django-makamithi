@@ -6,3 +6,5 @@ ABOUT_US_SEO_DETAILS_ROOT_ROUTE = 'retrieve/seo/'
 URL_FILE_NAME_WITHOUT_EXTENSION = get_file_name(__file__)
 
 _RETRIEVE_ABOUT_US_SEO_DETAILS_URL_ROUTE = ''
+
+urlpatterns = []
