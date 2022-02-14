@@ -10,8 +10,8 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
 
 
 class RetrieveSiteBreadcrumbModelSerializer(ModelSerializer):
-    image = _RetrievePhotoModelSerializer(required=False)
+    background_image = _RetrievePhotoModelSerializer(required=False)
 
     class Meta:
         model = SiteBreadcrumbModel
-        fields = ('image', 'id',)
+        fields = ('background_image', 'id',)
