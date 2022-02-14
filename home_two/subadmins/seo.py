@@ -1,5 +1,5 @@
 from social_sharing.subadmins.seo_social_share_data import SeoSocialShareDataModelAdmin
-from home_two.submodels.seo import HomeSEODetailsModel
+from home_two.models import HomeSEODetailsModel
 from django.contrib.admin import register
 
 
