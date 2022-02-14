@@ -1,5 +1,5 @@
 from social_sharing.serializers.image_aux_data import ImageAuxDataModelSerializer
-from home_two.submodels.seo import HomeSEODetailsModel
+from home_two.models import HomeSEODetailsModel
 from rest_framework.serializers import ModelSerializer
 
 
