@@ -1,4 +1,4 @@
-from home_two.submodels.preview_item import PhotoModel
+from home_two.models import PhotoModel
 from rest_framework.fields import DecimalField
 from shop.submodels.product import ProductModel
 from rest_framework.serializers import ModelSerializer

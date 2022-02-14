@@ -1,4 +1,4 @@
-from home_two.submodels.preview_item import PhotoModel
+from home_two.models import PhotoModel
 from django.db.models import (
     Model, ForeignKey, CharField, PROTECT, ManyToManyField)
 from django.db.models.fields import DateTimeField
