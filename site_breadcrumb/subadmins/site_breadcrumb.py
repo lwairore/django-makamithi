@@ -16,7 +16,8 @@ class _SiteBreadcrumbModelForm(ModelForm):
 @register(SiteBreadcrumbModel)
 class SiteBreadcrumbModelAdmin(ModelAdmin):
     form = _SiteBreadcrumbModelForm
-    list_display = ('id', 'background_image','modified_date',)
+    list_display = ('id', 'background_image', 'modified_date',
+                    'created_at',)
     date_hierarchy = 'created_at'
     raw_id_fields = ('background_image',)
     list_filter = ('modified_date', 'created_at',)
