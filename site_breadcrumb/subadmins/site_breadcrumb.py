@@ -20,3 +20,6 @@ class SiteBreadcrumbModelAdmin(ModelAdmin):
     date_hierarchy = 'created_at'
     raw_id_fields = ('background_image',)
     list_filter = ('modified_date', 'created_at',)
+
+    def has_delete_permission(self, request, obj = None):
+        return False
