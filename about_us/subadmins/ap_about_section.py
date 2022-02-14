@@ -7,7 +7,7 @@ class ApAboutSectionModelAdmin(ModelAdmin):
     list_display = ('heading', 'subheading', 'section_image', 'modified_date',
                     'created_at', )
     date_hierarchy = 'created_at'
-    raw_id_fields = ('background_image',)
+    raw_id_fields = ('section_image',)
     list_filter = ('modified_date', 'created_at',)
 
     def has_delete_permission(self, request, obj=None):
