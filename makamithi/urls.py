@@ -19,9 +19,8 @@ from gallery.apps import GalleryConfig
 from service.apps import ServiceConfig
 from shop.apps import ShopConfig
 from home_two.apps import HomeTwoConfig
-from django.conf.urls import include
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
