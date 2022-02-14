@@ -6,4 +6,3 @@ class SeoSocialShareDataModelAdmin(ModelAdmin):
                     'author', 'section', 'published', 'modified',)
     raw_id_fields = ('image',)
     date_hierarchy = 'published'
-    list_filter = ('modified', 'published',)
