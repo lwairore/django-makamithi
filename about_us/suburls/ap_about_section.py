@@ -1,0 +1,1 @@
+AP_ABOUT_SECTION_ROOT_ROUTE = 'retrieve/'
