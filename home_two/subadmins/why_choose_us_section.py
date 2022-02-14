@@ -10,6 +10,9 @@ class WhyChooseUsSectionModelAdmin(ModelAdmin):
     date_hierarchy = 'created_at'
     raw_id_fields = ('section_image',)
 
+    def has_delete_permission(self, request, obj=None):
+        return False
+
     def has_add_permission(self, request):
         # check if generally has add permission
         should_add_instance = super().has_add_permission(request)
