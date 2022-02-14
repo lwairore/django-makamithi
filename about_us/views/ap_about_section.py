@@ -1,4 +1,4 @@
-from about_us.submodels.ap_about_section import ApAboutSectionModel
+from about_us.models import ApAboutSectionModel
 from about_us.serializers.ap_about_section import RetrieveApAboutSectionModelSerializer
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
