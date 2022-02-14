@@ -1,8 +1,6 @@
 import os
 from os.path import basename
 
-from django.urls.conf import path
-
 
 def get_parent_directory_name_of_current_directory():
     current_working_directory = os.getcwd()
