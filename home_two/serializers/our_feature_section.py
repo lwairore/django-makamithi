@@ -1,5 +1,5 @@
 from home_two.submodels.our_feature_section import FeatureSectionModel
-from home_two.models import PhotoModel
+from home_two.submodels.preview_item import PhotoModel
 from rest_framework.serializers import ModelSerializer
 
 

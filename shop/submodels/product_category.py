@@ -1,4 +1,4 @@
-from home_two.models import PhotoModel
+from home_two.submodels.preview_item import PhotoModel
 from django.db.models import Model
 from django.db.models.deletion import PROTECT
 from django.db.models.fields import CharField, DateTimeField, TextField

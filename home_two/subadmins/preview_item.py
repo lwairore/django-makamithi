@@ -1,4 +1,4 @@
-from home_two.models import PhotoModel
+from home_two.submodels.preview_item import PhotoModel
 from django.contrib.admin import ModelAdmin, register
 
 

@@ -1,4 +1,4 @@
-from home_two.models import PhotoModel
+from home_two.submodels.preview_item import PhotoModel
 from site_breadcrumb.models import SiteBreadcrumbModel
 from rest_framework.serializers import ModelSerializer
 

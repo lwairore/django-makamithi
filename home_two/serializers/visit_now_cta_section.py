@@ -1,4 +1,4 @@
-from home_two.models import PhotoModel
+from home_two.submodels.preview_item import PhotoModel
 from home_two.submodels.visit_now_cta_section import VisitNowCtaSectionModel
 from rest_framework.serializers import ModelSerializer
 

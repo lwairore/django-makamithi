@@ -1,5 +1,5 @@
 from home_two.submodels.about_section import AboutSectionModel
-from home_two.models import PhotoModel
+from home_two.submodels.preview_item import PhotoModel
 from rest_framework.serializers import ModelSerializer
 
 
