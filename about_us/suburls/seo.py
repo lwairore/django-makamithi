@@ -1,5 +1,5 @@
+from django.urls.conf import path
 from about_us.views.seo import RetrieveAboutUsSEODetailsAPIView
-from os import path
 from custom_utils.get_file_name_util import get_file_name
 
 
@@ -12,5 +12,6 @@ _RETRIEVE_ABOUT_US_SEO_DETAILS_URL_ROUTE = ''
 urlpatterns = [
     path(
         _RETRIEVE_ABOUT_US_SEO_DETAILS_URL_ROUTE,
-        RetrieveAboutUsSEODetailsAPIView.as_view(),),
+        RetrieveAboutUsSEODetailsAPIView.as_view()
+    ),
 ]
