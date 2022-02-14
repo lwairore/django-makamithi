@@ -1,7 +1,7 @@
 from service.suburls import URL_FILE_NAME
 from service.suburls.service import LIST_SERVICE_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION
 from service.apps import ServiceConfig
-from django.urls.conf import path, include
+from django.urls import path, include
 
 app_name = ServiceConfig.name
 

@@ -1,5 +1,5 @@
 from home_two.views.seo import RetrieveHomeSEODetailsAPIView
-from django.urls.conf import path
+from django.urls import path
 from custom_utils.get_file_name_util import get_file_name
 
 

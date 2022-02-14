@@ -1,4 +1,4 @@
-from django.urls.conf import path
+from django.urls import path
 from about_us.views.seo import RetrieveAboutUsSEODetailsAPIView
 from custom_utils.get_file_name_util import get_file_name
 

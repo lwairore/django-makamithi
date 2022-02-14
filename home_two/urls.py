@@ -16,7 +16,7 @@ from home_two.suburls.banner_ad import (
     BANNER_AD_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as BANNER_AD_FILE_NAME_WITHOUT_EXTENSION)
 from home_two.apps import HomeTwoConfig
 from home_two.suburls import URL_FILE_NAME
-from django.urls.conf import path, include
+from django.urls import path, include
 
 app_name = HomeTwoConfig.name
 

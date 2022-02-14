@@ -1,5 +1,5 @@
 from site_breadcrumb.views.site_breadcrumb import RetrieveSiteBreadcrumbModelAPIView
-from django.urls.conf import path
+from django.urls import path
 from custom_utils.get_file_name_util import get_file_name
 
 

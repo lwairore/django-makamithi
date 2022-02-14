@@ -1,5 +1,5 @@
 from shop.views.product import ListProductAPIView
-from django.urls.conf import path
+from django.urls import path
 from shop.suburls.product_category import PRODUCT_CATEGORY_ROOT_ROUTE
 from custom_utils.get_file_name_util import get_file_name
 

@@ -3,7 +3,7 @@
 # from product.apps import ProductConfig
 # from product.views.product import ListProductAPIView
 # from product.views.category import ListProductCategoryAPIView
-# from django.urls.conf import path, include
+# from django.urls import path, include
 
 # _PRODUCT_ID_PARAMETER = '<int:product_id>'
 
