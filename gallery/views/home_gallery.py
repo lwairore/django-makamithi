@@ -11,7 +11,7 @@ class ListHomeGalleryAPIView(APIView):
 
     def _list_gallery_kueryset(self):
         gallery_kueryset = GalleryModel.objects\
-            .only('image__image', 'image__caption',)\
+            .only('image__image', 'image__caption', 'id',)\
             .select_related('image')\
             .order_by().all()
 
