@@ -1,4 +1,1 @@
-from custom_utils.get_file_name_util import get_parent_directory_name_of_current_directory
-
-
-URL_FILE_NAME = get_parent_directory_name_of_current_directory(__file__)
+URL_FILE_NAME = 'suburls'
