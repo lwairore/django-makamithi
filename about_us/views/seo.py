@@ -19,3 +19,11 @@ class RetrieveAboutUsSEODetailsAPIView(APIView):
             .first()
 
         return about_us_seo_details_instance
+
+    def get(self, request):
+        about_us_seo_details_instance = self._get_about_us_seo_details_instance()
+
+        about_us_seo_details_instance_serializer = self._serializer_class(
+            about_us_seo_details_instance)
+
+        return Response(about_us_seo_details_instance_serializer.data)
