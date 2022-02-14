@@ -6,11 +6,11 @@ AP_ABOUT_SECTION_ROOT_ROUTE = 'retrieve/section/ap-about/'
 
 URL_FILE_NAME_WITHOUT_EXTENSION = get_file_name(__file__)
 
-_RETRIEVE_API_ABOUT_SECTION_URL_ROUTE = ''
+_RETRIEVE_AP_ABOUT_SECTION_URL_ROUTE = ''
 
 urlpatterns = [
     path(
-        _RETRIEVE_API_ABOUT_SECTION_URL_ROUTE,
+        _RETRIEVE_AP_ABOUT_SECTION_URL_ROUTE,
         RetrieveApAboutSectionAPIView.as_view()
     )
 ]
