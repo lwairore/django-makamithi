@@ -17,3 +17,11 @@ class RetrieveFaqSectionAPIView(APIView):
             .first()
 
         return faq_section_instance
+
+    def get(self, request):
+        faq_section_instance = self._get_faq_section_instance()
+
+        faq_section_instance_serializer = self._serializer_class(
+            faq_section_instance)
+
+        return Response(faq_section_instance_serializer.data)
