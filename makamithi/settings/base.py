@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'gallery.apps.GalleryConfig',
     # Site breadcrumb application
     'site_breadcrumb.apps.SiteBreadcrumbConfig',
+    # About us application
+    'about_us.apps.AboutUsConfig',
 ]
 
 MIDDLEWARE = [
