@@ -6,7 +6,7 @@ from django.db.models.fields.related import ForeignKey
 
 
 class SeoSocialShareDataModel(Model):
-    title = CharField(max_length=70)
+    title = CharField(max_length=80)
     keywords = CharField(max_length=80, blank=True, null=True)
     description = TextField(max_length=466, blank=True, null=True)
     image = ForeignKey(
