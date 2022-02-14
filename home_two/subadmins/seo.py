@@ -13,3 +13,6 @@ class HomeSEODetailsModelAdmin(SeoSocialShareDataModelAdmin):
             should_add_instance = False
 
         return should_add_instance
+
+    def has_delete_permission(self, request, obj=None):
+        return False
