@@ -9,7 +9,7 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
         fields = ('image', 'caption',)
 
 
-class ApAboutSectionModelSerializer(ModelSerializer):
+class RetrieveApAboutSectionModelSerializer(ModelSerializer):
     section_image = _RetrievePhotoModelSerializer(required=False)
 
     class Meta:
