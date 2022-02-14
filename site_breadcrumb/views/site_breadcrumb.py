@@ -7,3 +7,4 @@ from rest_framework.views import APIView
 class RetrieveSiteBreadcrumbModelAPIView(APIView):
     permission_classes = (AllowAny,)
     _serializer_class = RetrieveSiteBreadcrumbModelSerializer
+    
