@@ -1,4 +1,4 @@
-from about_us.submodels.ap_about_section import ApAboutSectionModel
+from about_us.models import ApAboutSectionModel
 from django.contrib.admin import ModelAdmin, register
 
 
