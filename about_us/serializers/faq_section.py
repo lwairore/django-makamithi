@@ -10,6 +10,8 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
 
 
 class RetrieveFaqSectionModelSerializer(ModelSerializer):
+    background_image = _RetrievePhotoModelSerializer(required=False)
+
     class Meta:
         model = FaqSectionModel
         fields = ('title', 'background_image',)
