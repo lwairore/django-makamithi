@@ -8,3 +8,11 @@ from rest_framework.views import APIView
 class ListFaqModelAPIView(APIView):
     permission_classes = (AllowAny,)
     _serializer_class = RetrieveFaqModelSerializer
+
+    def _list_faq_kueryset(self):
+        faq_kueryset = FaqModel.objects\
+            .order_by()\
+            .only('question', 'answer',)\
+            .all()
+
+        return faq_kueryset
