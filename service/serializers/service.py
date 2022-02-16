@@ -9,7 +9,7 @@ class _RetrievePhotoModelModelSerializer(ModelSerializer):
         fields = ('image', 'caption',)
 
 
-class RetrieveServiceModelSerializer(ModelSerializer):
+class RetrieveHomeServiceModelSerializer(ModelSerializer):
     home_photo = _RetrievePhotoModelModelSerializer(required=False)
 
     class Meta:

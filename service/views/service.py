@@ -1,13 +1,13 @@
 from rest_framework.response import Response
 from service.submodels.service import ServiceModel
-from service.serializers.service import RetrieveServiceModelSerializer
+from service.serializers.service import RetrieveHomeServiceModelSerializer
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 
 
 class ListServiceAPIView(APIView):
     permission_classes = (AllowAny,)
-    _serializer_class = RetrieveServiceModelSerializer
+    _serializer_class = RetrieveHomeServiceModelSerializer
 
     def _list_service(self):
         service_kueryset = ServiceModel.objects\
