@@ -11,9 +11,9 @@ class ListServiceAPIView(APIView):
 
     def _list_service(self):
         service_kueryset = ServiceModel.objects\
-            .select_related('photo')\
+            .select_related('home_photo')\
             .order_by()\
-            .only('photo__image', 'photo__caption', 'id', 'title', 'summary',)\
+            .only('home_photo__image', 'home_photo__caption', 'id', 'title', 'summary',)\
             .all()
 
         return service_kueryset
