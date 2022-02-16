@@ -16,3 +16,11 @@ class ListFaqModelAPIView(APIView):
             .all()
 
         return faq_kueryset
+
+    def get(self, request):
+        faq_kueryset = self._list_faq_kueryset()
+
+        faq_kueryset_serializer = self._serializer_class(
+            faq_kueryset, many=True)
+
+        return Response(faq_kueryset_serializer.data)
