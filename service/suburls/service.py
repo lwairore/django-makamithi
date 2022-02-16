@@ -1,4 +1,4 @@
-from service.views.service import ListServiceAPIView
+from service.views.service import ListHomeServiceAPIView
 from django.urls import path
 from custom_utils.get_file_name_util import get_file_name
 
@@ -10,5 +10,5 @@ _LIST_SERVICE_ROUTE = ''
 LIST_SERVICE_ROOT_ROUTE = 'list/'
 
 urlpatterns = [
-    path(_LIST_SERVICE_ROUTE, ListServiceAPIView.as_view()),
+    path(_LIST_SERVICE_ROUTE, ListHomeServiceAPIView.as_view()),
 ]

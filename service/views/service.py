@@ -5,7 +5,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 
 
-class ListServiceAPIView(APIView):
+class ListHomeServiceAPIView(APIView):
     permission_classes = (AllowAny,)
     _serializer_class = RetrieveHomeServiceModelSerializer
 
