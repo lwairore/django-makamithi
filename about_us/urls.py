@@ -1,3 +1,5 @@
+from about_us.suburls.what_we_do_section import (WHAT_WE_DO_SECTION_ROOT_ROUTE,
+                                                 URL_FILE_NAME_WITHOUT_EXTENSION as WHAT_WE_DO_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from about_us.suburls.faq import (
     FAQ_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as FAQ_URL_FILE_NAME_WITHOUT_EXTENSION)
 from about_us.suburls.faq_section import (FAQ_SECTION_ROOT_ROUTE,
@@ -37,5 +39,10 @@ urlpatterns = [
     # Routes for FAQ
     path(FAQ_ROOT_ROUTE,
          include(
-             _BASE_INCLUDE_PATH+FAQ_URL_FILE_NAME_WITHOUT_EXTENSION))
+             _BASE_INCLUDE_PATH+FAQ_URL_FILE_NAME_WITHOUT_EXTENSION)),
+
+    # Routes for What we do section
+    path(WHAT_WE_DO_SECTION_ROOT_ROUTE,
+         include(
+             _BASE_INCLUDE_PATH+WHAT_WE_DO_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
 ]
