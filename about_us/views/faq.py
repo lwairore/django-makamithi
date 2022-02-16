@@ -7,3 +7,4 @@ from rest_framework.views import APIView
 
 class ListFaqModelAPIView(APIView):
     permission_classes = (AllowAny,)
+    _serializer_class = RetrieveFaqModelSerializer
