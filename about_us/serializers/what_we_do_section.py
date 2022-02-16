@@ -9,7 +9,8 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
 
 
 class RetrieveWhatWeDoSectionModelSerializer(ModelSerializer):
-
+    section_image = _RetrievePhotoModelSerializer(required=False)
+    
     class Meta:
         model = WhatWeDoSectionModel
         fields = ('heading', 'summary',
