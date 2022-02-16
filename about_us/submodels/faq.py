@@ -17,4 +17,4 @@ class FaqModel(Model):
 
     class Meta:
         verbose_name = 'FAQ'
-        verbose_name = 'FAQs'
+        verbose_name_plural = 'FAQs'
