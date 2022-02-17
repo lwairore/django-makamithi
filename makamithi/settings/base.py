@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     'about_us.apps.AboutUsConfig',
     # Contact us application
     'contact_us.apps.ContactUsConfig',
+    # Team application
+    'team.apps.TeamConfig',
 ]
 
 MIDDLEWARE = [
