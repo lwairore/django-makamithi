@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from team.apps import TeamConfig
 from about_us.apps import AboutUsConfig
 from contact_us.apps import ContactUsConfig
 from site_breadcrumb.apps import SiteBreadcrumbConfig
@@ -68,6 +69,10 @@ urlpatterns = [
     # URLConfs for `contact_us` application
     path('contact-us/', include(
         f'{ContactUsConfig.name}.urls')),
+
+    # URLConfs for `team` application
+    path('team/', include(
+        f'{TeamConfig.name}.urls')),
 ]
 
 if settings.DEBUG:
