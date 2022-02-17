@@ -9,3 +9,4 @@ class ServiceModelAdmin(ModelAdmin):
     raw_id_fields = ('home_photo', 'about_photo',)
     date_hierarchy = 'modified_date'
     list_filter = ('created_at', 'modified_date',)
+    filter_horizontal = ('plans',)
