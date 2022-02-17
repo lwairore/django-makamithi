@@ -1,3 +1,5 @@
+from service.suburls.pricing_area_section import (
+    PRICING_AREA_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as PRICING_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from service.suburls import URL_FILE_NAME
 from service.suburls.service import LIST_SERVICE_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION
 from service.apps import ServiceConfig
@@ -14,5 +16,10 @@ urlpatterns = [
     path(LIST_SERVICE_ROOT_ROUTE,
          include(
              _BASE_INCLUDE_PATH + URL_FILE_NAME_WITHOUT_EXTENSION
-         ))
+         )),
+
+    # Routes for Pricing area section
+    path(PRICING_AREA_SECTION_ROOT_ROUTE,
+         include(
+             _BASE_INCLUDE_PATH+PRICING_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
 ]
