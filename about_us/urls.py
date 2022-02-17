@@ -1,3 +1,5 @@
+from about_us.suburls.pricing_area_section import (
+    PRICING_AREA_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as PRICING_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from about_us.suburls.client_review_section import (
     CLIENT_REVIEW_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as CLIENT_REVIEW_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from about_us.suburls.team_area_section import (
@@ -59,4 +61,9 @@ urlpatterns = [
     path(CLIENT_REVIEW_SECTION_ROOT_ROUTE,
          include(
              _BASE_INCLUDE_PATH+CLIENT_REVIEW_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
+
+    # Routes for Pricing area section
+    path(PRICING_AREA_SECTION_ROOT_ROUTE,
+         include(
+             _BASE_INCLUDE_PATH+PRICING_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
 ]
