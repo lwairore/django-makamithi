@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from about_us.apps import AboutUsConfig
+from contact_us.apps import ContactUsConfig
 from site_breadcrumb.apps import SiteBreadcrumbConfig
 from gallery.apps import GalleryConfig
 from service.apps import ServiceConfig
@@ -63,6 +64,10 @@ urlpatterns = [
     # URLConfs for `about_us` application
     path('about-us/', include(
         f'{AboutUsConfig.name}.urls')),
+
+    # URLConfs for `contact_us` application
+    path('contact-us/', include(
+        f'{ContactUsConfig.name}.urls')),
 ]
 
 if settings.DEBUG:
