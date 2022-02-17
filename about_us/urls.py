@@ -1,3 +1,5 @@
+from about_us.suburls.client_review_section import (
+    CLIENT_REVIEW_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as CLIENT_REVIEW_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from about_us.suburls.team_area_section import (
     TEAM_AREA_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as TEAM_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from about_us.suburls.what_we_do_section import (WHAT_WE_DO_SECTION_ROOT_ROUTE,
@@ -52,4 +54,9 @@ urlpatterns = [
     path(TEAM_AREA_SECTION_ROOT_ROUTE,
          include(
              _BASE_INCLUDE_PATH+TEAM_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
+
+    # Routes for Client review section
+    path(CLIENT_REVIEW_SECTION_ROOT_ROUTE,
+         include(
+             _BASE_INCLUDE_PATH+CLIENT_REVIEW_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
 ]
