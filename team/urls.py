@@ -4,7 +4,7 @@ from django.urls import path, include
 from team.suburls import URL_FILE_NAME
 from team.apps import TeamConfig
 
-app_name = TeamConfig
+app_name = TeamConfig.name
 
 _BASE_INCLUDE_PATH = '{}.{}.'.format(
     app_name,
