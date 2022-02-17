@@ -13,6 +13,7 @@ class ContactInfoModel(Model):
     address = CharField(max_length=150)
     email = EmailField()
     phone_number = CharField(max_length=15)
+    created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self) -> str:
         return self.address_title
