@@ -1,3 +1,5 @@
+from about_us.suburls.team_area_section import (
+    TEAM_AREA_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as TEAM_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from about_us.suburls.what_we_do_section import (WHAT_WE_DO_SECTION_ROOT_ROUTE,
                                                  URL_FILE_NAME_WITHOUT_EXTENSION as WHAT_WE_DO_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from about_us.suburls.faq import (
@@ -45,4 +47,9 @@ urlpatterns = [
     path(WHAT_WE_DO_SECTION_ROOT_ROUTE,
          include(
              _BASE_INCLUDE_PATH+WHAT_WE_DO_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
+
+    # Routes for Team area section
+    path(TEAM_AREA_SECTION_ROOT_ROUTE,
+         include(
+             _BASE_INCLUDE_PATH+TEAM_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
 ]
