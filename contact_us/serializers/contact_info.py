@@ -10,6 +10,8 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
 
 
 class ContactInfoModelSerializer(ModelSerializer):
+    address_image = _RetrievePhotoModelSerializer(required=False)
+    
     class Meta:
         model = ContactInfoModel
         fields = (
