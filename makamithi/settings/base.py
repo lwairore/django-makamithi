@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     'site_breadcrumb.apps.SiteBreadcrumbConfig',
     # About us application
     'about_us.apps.AboutUsConfig',
+    # Contact us application
+    'contact_us.ContactUsConfig',
 ]
 
 MIDDLEWARE = [
