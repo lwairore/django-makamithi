@@ -1,0 +1,1 @@
+from .contact_info import ContactInfoModelSerializer
