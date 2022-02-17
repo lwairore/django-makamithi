@@ -9,7 +9,7 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
         fields = ('image', 'caption',)
 
 
-class ContactInfoModelSerializer(ModelSerializer):
+class RetrieveContactInfoModelSerializer(ModelSerializer):
     address_image = _RetrievePhotoModelSerializer(required=False)
     
     class Meta:
