@@ -13,6 +13,9 @@ class TeamModel(Model):
     role = CharField(max_length=70)
     facebook = URLField(blank=True, null=True)
     twitter = URLField(blank=True, null=True)
+    created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
+    modified_date = DateTimeField(auto_now=True, blank=True, null=True)
+
 
     def __str__(self) -> str:
         return self.full_name
