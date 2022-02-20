@@ -11,7 +11,7 @@ class RetrieveFaqSectionAPIView(APIView):
 
     def _get_faq_section_instance(self):
         faq_section_instance = FaqSectionModel.objects\
-            .only('title', 'background_image__image', 'background_image__caption',)\
+            .only('heading', 'background_image__image', 'background_image__caption',)\
             .select_related('background_image')\
             .order_by()\
             .first()

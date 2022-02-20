@@ -14,4 +14,4 @@ class RetrieveFaqSectionModelSerializer(ModelSerializer):
 
     class Meta:
         model = FaqSectionModel
-        fields = ('title', 'background_image',)
+        fields = ('heading', 'background_image',)

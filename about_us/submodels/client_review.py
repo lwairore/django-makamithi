@@ -8,8 +8,8 @@ from django.db.models.fields.related import ForeignKey
 
 class ClientReviewModel(Model):
     full_name = CharField(max_length=150)
-    review = TextField(max_length=500)
     position = CharField(max_length=90, blank=True, null=True)
+    review = TextField(max_length=500)
     image = ForeignKey(
         PhotoModel, blank=True, null=True, on_delete=PROTECT)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)

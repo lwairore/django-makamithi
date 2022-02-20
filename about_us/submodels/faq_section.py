@@ -7,14 +7,14 @@ from django.db.models.fields.related import ForeignKey
 
 
 class FaqSectionModel(Model):
-    title = CharField(max_length=70)
+    heading = CharField(max_length=70)
     background_image = ForeignKey(
         PhotoModel, blank=True, null=True, on_delete=PROTECT)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
 
     def __str__(self) -> str:
-        return self.title
+        return self.heading
 
     def clean(self):
         if FaqSectionModel.objects.exists() and not self.pk:
