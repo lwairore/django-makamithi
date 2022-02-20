@@ -4,7 +4,7 @@ from django.contrib.admin import ModelAdmin, register
 
 @register(ClientReviewSectionModel)
 class ClientReviewSectionModelAdmin(ModelAdmin):
-    list_display = ('heading', 'section_image', 'modified_date',
+    list_display = ('heading', 'section_image', 'background_image', 'modified_date',
                     'created_at', )
     raw_id_fields = ('section_image',)
 

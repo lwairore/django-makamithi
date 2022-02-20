@@ -11,8 +11,9 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
 
 class RetrieveClientReviewSectionModelSerializer(ModelSerializer):
     section_image = _RetrievePhotoModelSerializer(required=False)
+    background_image = _RetrievePhotoModelSerializer(required=False)
 
     class Meta:
         model = ClientReviewSectionModel
-        fields = ('heading', 'summary',
+        fields = ('heading', 'summary', 'background_image',
                   'section_image',)

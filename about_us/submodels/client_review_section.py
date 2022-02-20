@@ -8,8 +8,12 @@ from django.db.models.fields.related import ForeignKey
 
 class ClientReviewSectionModel(Model):
     heading = CharField(max_length=80)
+    background_image = ForeignKey(
+        PhotoModel, blank=True, null=True, on_delete=PROTECT,
+        related_name='client_review_section_background_image')
     section_image = ForeignKey(
-        PhotoModel, blank=True, null=True, on_delete=PROTECT)
+        PhotoModel, blank=True, null=True, on_delete=PROTECT,
+        related_name='client_review_section_section_image')
     summary = TextField(max_length=250, blank=True, null=True)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
@@ -30,5 +34,5 @@ class ClientReviewSectionModel(Model):
         return super(ClientReviewSectionModel, self).save(*args, **kwargs)
 
     class Meta:
-        verbose_name = 'What we do section'
-        verbose_name_plural = 'What we do sections'
+        verbose_name = 'Client review section'
+        verbose_name_plural = 'Client review sections'

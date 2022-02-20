@@ -12,8 +12,9 @@ class RetrieveClientReviewSectionAPIView(APIView):
     def _get_client_review_section_instance(self):
         client_review_section_instance = ClientReviewSectionModel.objects\
             .only('heading', 'section_image__image', 'section_image__caption',
+                  'background_image__image', 'background_image__caption',
                   'summary',)\
-            .select_related('section_image')\
+            .select_related('section_image', 'background_image',)\
             .order_by()\
             .first()
 
