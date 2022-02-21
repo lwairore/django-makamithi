@@ -9,7 +9,7 @@ class _RetrievePhotoModelModelSerializer(ModelSerializer):
         fields = ('image', 'caption',)
 
 
-class RetrieveHomeServiceModelSerializer(ModelSerializer):
+class RetrieveServiceForHomePageSerializer(ModelSerializer):
     home_photo = _RetrievePhotoModelModelSerializer(required=False)
 
     class Meta:
@@ -17,9 +17,17 @@ class RetrieveHomeServiceModelSerializer(ModelSerializer):
         fields = ('home_photo', 'id', 'title', 'summary')
 
 
-class RetrieveAboutServiceModelSerializer(ModelSerializer):
+class RetrieveServiceForAboutPageSerializer(ModelSerializer):
     about_photo = _RetrievePhotoModelModelSerializer(required=False)
 
     class Meta:
         model = ServiceModel
         fields = ('about_photo', 'id', 'title', 'summary')
+
+
+class RetrieveServiceForServicePageSerializer(ModelSerializer):
+    service_page_photo = _RetrievePhotoModelModelSerializer(required=False)
+
+    class Meta:
+        model = ServiceModel
+        fields = ('service_page_photo', 'id', 'title', 'summary')
