@@ -9,7 +9,9 @@ class ServiceModel(Model):
     home_photo = ForeignKey(PhotoModel, blank=True,
                             null=True, on_delete=PROTECT, related_name='service_model_home_photo')
     about_photo = ForeignKey(PhotoModel, blank=True,
-                            null=True, on_delete=PROTECT, related_name='service_model_about_photo')
+                             null=True, on_delete=PROTECT, related_name='service_model_about_photo')
+    service_page_photo = ForeignKey(PhotoModel, blank=True,
+                                    null=True, on_delete=PROTECT, related_name='service_model_service_page_photo')
     title = CharField(max_length=80)
     summary = TextField(max_length=120, blank=True, null=True)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
