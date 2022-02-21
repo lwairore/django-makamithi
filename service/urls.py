@@ -1,3 +1,5 @@
+from service.suburls.about_section import (
+    SERVICE_ABOUT_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as SERVICE_ABOUT_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from service.suburls.video import (
     VIDEO_ROOT_ROUTE,
     URL_FILE_NAME_WITHOUT_EXTENSION as VIDEO_URL_FILE_NAME_WITHOUT_EXTENSION)
@@ -39,6 +41,11 @@ urlpatterns = [
     path(SERVICE_AREA_SECTION_ROOT_ROUTE,
          include(
              _BASE_INCLUDE_PATH+SERVICE_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
+
+    # Routes for section Service About section
+    path(SERVICE_ABOUT_SECTION_ROOT_ROUTE,
+         include(
+             _BASE_INCLUDE_PATH+SERVICE_ABOUT_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
 
     # Routes for section Video Area
     path(VIDEO_ROOT_ROUTE,
