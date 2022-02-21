@@ -1,3 +1,5 @@
+from service.suburls.service_area_section import (
+    SERVICE_AREA_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as SERVICE_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from service.suburls.service_seo import (
     SERVICE_SEO_DETAILS_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as SERVICE_SEO_URL_FILE_NAME_WITHOUT_EXTENSION)
 from service.suburls.pricing_area_section import (
@@ -29,4 +31,9 @@ urlpatterns = [
     path(SERVICE_SEO_DETAILS_ROOT_ROUTE,
          include(
              _BASE_INCLUDE_PATH+SERVICE_SEO_URL_FILE_NAME_WITHOUT_EXTENSION)),
+
+    # Routes for section Service Area
+    path(SERVICE_AREA_SECTION_ROOT_ROUTE,
+         include(
+             _BASE_INCLUDE_PATH+SERVICE_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
 ]
