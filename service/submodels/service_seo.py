@@ -6,7 +6,7 @@ class ServiceSEODetailsModel(SeoSocialShareDataModel):
     def clean(self):
         if ServiceSEODetailsModel.objects.exists() and not self.pk:
             raise ValidationError(
-                "You can only have one SEO Configuration for 'About us page'")
+                "You can only have one SEO Configuration for 'Service page'")
 
     def save(self, *args, **kwargs):
         if not self.pk and ServiceSEODetailsModel.objects.exists():
@@ -17,5 +17,5 @@ class ServiceSEODetailsModel(SeoSocialShareDataModel):
         return super(ServiceSEODetailsModel, self).save(*args, **kwargs)
 
     class Meta:
-        verbose_name = 'About Us SEO Detail'
-        verbose_name_plural = 'About Us SEO Details'
+        verbose_name = 'Service SEO Detail'
+        verbose_name_plural = 'Service SEO Details'
