@@ -31,4 +31,4 @@ class WhyChooseUsSectionModel(Model):
 
     class Meta:
         verbose_name = 'Why choose us section'
-        verbose_name_plural = 'Why choose us sections'
+        verbose_name_plural = 'Why choose us section'

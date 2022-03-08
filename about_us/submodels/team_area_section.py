@@ -31,4 +31,4 @@ class TeamAreaSectionModel(Model):
 
     class Meta:
         verbose_name = 'Team area section'
-        verbose_name_plural = 'Team area sections'
+        verbose_name_plural = 'Team area section'

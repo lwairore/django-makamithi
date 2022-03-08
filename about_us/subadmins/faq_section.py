@@ -7,7 +7,6 @@ class FaqSectionModelAdmin(ModelAdmin):
     list_display = ('heading', 'background_image', 'modified_date',
                     'created_at', )
     raw_id_fields = ('background_image',)
-    search_fields = ('heading',)
 
     def has_delete_permission(self, request, obj=None):
         return False

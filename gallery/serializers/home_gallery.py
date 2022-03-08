@@ -10,8 +10,8 @@ class _RetrievePhotoModelSerializer(ModelSerializer):
 
 
 class ListHomeGallerySerializer(ModelSerializer):
-    image = _RetrievePhotoModelSerializer(required=False)
+    home_preview = _RetrievePhotoModelSerializer(required=False)
 
     class Meta:
         model = GalleryModel
-        fields = ('image', 'id',)
+        fields = ('home_preview', 'id',)

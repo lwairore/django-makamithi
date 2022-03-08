@@ -1,3 +1,5 @@
+from service.suburls.service_sidebar_section import (
+    SERVICE_SIDEBAR_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as SERVICE_SIDEBAR_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from service.suburls.about_section import (
     SERVICE_ABOUT_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as SERVICE_ABOUT_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from service.suburls.video import (
@@ -10,7 +12,7 @@ from service.suburls.service_seo import (
 from service.suburls.pricing_area_section import (
     PRICING_AREA_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as PRICING_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from service.suburls import URL_FILE_NAME
-from service.suburls.service import LIST_SERVICE_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION
+from service.suburls.service import (LIST_SERVICE_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as SERVICE_URL_FILE_NAME_WITHOUT_EXTENSION)
 from service.apps import ServiceConfig
 from django.urls import path, include
 
@@ -24,7 +26,7 @@ urlpatterns = [
     # Routes for showing list of services
     path(LIST_SERVICE_ROOT_ROUTE,
          include(
-             _BASE_INCLUDE_PATH + URL_FILE_NAME_WITHOUT_EXTENSION
+             _BASE_INCLUDE_PATH + SERVICE_URL_FILE_NAME_WITHOUT_EXTENSION
          )),
 
     # Routes for Pricing area section
@@ -46,6 +48,11 @@ urlpatterns = [
     path(SERVICE_ABOUT_SECTION_ROOT_ROUTE,
          include(
              _BASE_INCLUDE_PATH+SERVICE_ABOUT_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
+
+    # Routes for section Service Sidebar section
+    path(SERVICE_SIDEBAR_SECTION_ROOT_ROUTE,
+         include(
+             _BASE_INCLUDE_PATH+SERVICE_SIDEBAR_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
 
     # Routes for section Video Area
     path(VIDEO_ROOT_ROUTE,

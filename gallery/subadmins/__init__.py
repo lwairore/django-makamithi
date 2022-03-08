@@ -1,1 +1,3 @@
 from .gallery import GalleryModelAdmin
+from .gallery_seo import GallerySEODetailsModelAdmin
+from .gallery_detail_section import GalleryDetailSectionModelAdmin

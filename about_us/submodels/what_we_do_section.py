@@ -31,4 +31,4 @@ class WhatWeDoSectionModel(Model):
 
     class Meta:
         verbose_name = 'What we do section'
-        verbose_name_plural = 'What we do sections'
+        verbose_name_plural = 'What we do section'

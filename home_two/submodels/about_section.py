@@ -28,4 +28,4 @@ class AboutSectionModel(Model):
 
     class Meta:
         verbose_name = 'About section'
-        verbose_name_plural = 'About sections'
+        verbose_name_plural = 'About section'

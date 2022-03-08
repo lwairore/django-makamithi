@@ -6,8 +6,6 @@ from django.contrib.admin import ModelAdmin, register
 class VisitNowCtaSectionModelAdmin(ModelAdmin):
     list_display = ('heading', 'background_image',
                     'section_image', 'modified_date', 'created_at',)
-    list_filter = ('modified_date', 'created_at',)
-    search_fields = ('heading', 'description',)
     date_hierarchy = 'created_at'
     raw_id_fields = ('background_image', 'section_image',)
 

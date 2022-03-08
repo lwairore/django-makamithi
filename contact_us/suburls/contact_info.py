@@ -9,7 +9,10 @@ URL_FILE_NAME_WITHOUT_EXTENSION = get_file_name(__file__)
 
 _LIST_CONTACT_INFO_URL_ROUTE = ''
 
+
+
 urlpatterns = [
+    # URLConf for 'Contact info'
     path(_LIST_CONTACT_INFO_URL_ROUTE,
          ListContactInfoAPIView.as_view()),
 ]

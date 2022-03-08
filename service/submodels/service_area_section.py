@@ -31,4 +31,4 @@ class ServiceAreaSectionModel(Model):
 
     class Meta:
         verbose_name = 'Service area section'
-        verbose_name_plural = 'Service area sections'
+        verbose_name_plural = 'Service area section'

@@ -1,4 +1,4 @@
-from team.views.team import ListTeamAPIView
+from team.views.team import ListTeamForTeamPageAPIView
 from django.urls import path
 from custom_utils.get_file_name_util import get_file_name
 
@@ -11,5 +11,5 @@ _LIST_TEAM_URL_ROUTE = ''
 
 urlpatterns = [
     path(_LIST_TEAM_URL_ROUTE,
-         ListTeamAPIView.as_view()),
+         ListTeamForTeamPageAPIView.as_view()),
 ]

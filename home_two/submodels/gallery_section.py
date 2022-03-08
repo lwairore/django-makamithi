@@ -34,4 +34,4 @@ class GallerySectionModel(Model):
 
     class Meta:
         verbose_name = 'Gallery section'
-        verbose_name_plural = 'Gallery sections'
+        verbose_name_plural = 'Gallery section'

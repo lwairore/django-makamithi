@@ -8,7 +8,7 @@ from django.db.models.fields.related import ForeignKey
 
 class ServiceAboutSectionModel(Model):
     heading = CharField(max_length=70)
-    description = TextField(max_length=500, blank=True, null=True)
+    summary = TextField(max_length=500, blank=True, null=True)
     section_image = ForeignKey(
         PhotoModel, blank=True, null=True, on_delete=PROTECT)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
@@ -31,4 +31,4 @@ class ServiceAboutSectionModel(Model):
 
     class Meta:
         verbose_name = 'Service About section'
-        verbose_name_plural = 'Service About sections'
+        verbose_name_plural = 'Service About section'

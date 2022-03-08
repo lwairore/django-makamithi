@@ -1,3 +1,9 @@
+from home_two.suburls.product_area_section import (PRODUCT_AREA_SECTION_ROOT_ROUTE,
+                                                   URL_FILE_NAME_WITHOUT_EXTENSION as PRODUCT_AREA_FILE_NAME_WITHOUT_EXTENSION)
+from home_two.suburls.counter_area_section import (
+    COUNTER_AREA_SECTION_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as COUNTER_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
+from home_two.suburls.badge import (
+    BADGE_ROOT_ROUTE, URL_FILE_NAME_WITHOUT_EXTENSION as BADGE_URL_FILE_NAME_WITHOUT_EXTENSION)
 from home_two.suburls.gallery_section import (GALLERY_SECTION_ROOT_ROUTE,
                                               URL_FILE_NAME_WITHOUT_EXTENSION as GALLERY_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)
 from home_two.suburls.core_value import (CORE_VALUE_ROOT_ROUTE,
@@ -39,6 +45,11 @@ urlpatterns = [
     path(FEATURE_SECTION_ROOT_ROUTE,
          include(_BASE_INCLUDE_PATH + FEATURE_FILE_NAME_WITHOUT_EXTENSION)),
 
+
+    # Routes for Product area section
+    path(PRODUCT_AREA_SECTION_ROOT_ROUTE,
+         include(_BASE_INCLUDE_PATH + PRODUCT_AREA_FILE_NAME_WITHOUT_EXTENSION)),
+
     # Routes for Visit now cta section
     path(VISIT_NOW_CTA_SECTION_ROOT_ROUTE,
          include(_BASE_INCLUDE_PATH + VISIT_NOW_CTA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
@@ -47,6 +58,10 @@ urlpatterns = [
     path(WHY_CHOOSE_US_SECTION_ROOT_ROUTE,
          include(_BASE_INCLUDE_PATH + WHY_CHOOSE_US_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
 
+    # Routes for Counter area section
+    path(COUNTER_AREA_SECTION_ROOT_ROUTE,
+         include(_BASE_INCLUDE_PATH + COUNTER_AREA_SECTION_URL_FILE_NAME_WITHOUT_EXTENSION)),
+
     # Routes for Home SEO Details
     path(HOME_SEO_DETAILS_ROOT_ROUTE,
          include(_BASE_INCLUDE_PATH + HOME_SEO_DETAILS_URL_FILE_NAME_WITHOUT_EXTENSION)),
@@ -54,6 +69,10 @@ urlpatterns = [
     # Routes for Core value
     path(CORE_VALUE_ROOT_ROUTE,
          include(_BASE_INCLUDE_PATH + CORE_VALUE_URL_FILE_NAME_WITHOUT_EXTENSION)),
+
+    # Routes for Badge
+    path(BADGE_ROOT_ROUTE,
+         include(_BASE_INCLUDE_PATH + BADGE_URL_FILE_NAME_WITHOUT_EXTENSION)),
 
     # Routes for Gallery section
     path(GALLERY_SECTION_ROOT_ROUTE,

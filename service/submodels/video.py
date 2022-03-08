@@ -35,7 +35,7 @@ class VideoModel(Model):
 
     class Meta:
         verbose_name = 'Video area section'
-        verbose_name_plural = 'Video area sections'
+        verbose_name_plural = 'Video area section'
 
     class Meta:
         verbose_name = 'Video'

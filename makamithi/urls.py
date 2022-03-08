@@ -13,6 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from partner.apps import PartnerConfig
+from footer.apps import FooterConfig
+from social_media.apps import SocialMediaConfig
+from header.apps import HeaderConfig
+from terms_and_privacy_policy.apps import TermsAndPrivacyPolicyConfig
+from inbox.apps import InboxConfig
 from team.apps import TeamConfig
 from about_us.apps import AboutUsConfig
 from contact_us.apps import ContactUsConfig
@@ -44,7 +50,6 @@ urlpatterns = [
     # URLConfs for `home` application
     path('home/', include(
         f'{HomeTwoConfig.name}.urls')),
-    # path('products/', include('product.urls')),
 
     # URLConfs for `service` application
     path('service/', include(
@@ -73,6 +78,30 @@ urlpatterns = [
     # URLConfs for `team` application
     path('team/', include(
         f'{TeamConfig.name}.urls')),
+
+    # URLConfs for `social_media` application
+    path('social-media/', include(
+        f'{SocialMediaConfig.name}.urls')),
+
+    # URLConfs for `inbox` application
+    path('inbox/', include(
+        f'{InboxConfig.name}.urls')),
+
+    # URLConfs for `Terms and privacy policy` application
+    # path('terms-and-privacy-policy/', include(
+    #     f'{TermsAndPrivacyPolicyConfig.name}.urls')),
+
+    # URLConfs for `header` application
+    path('header/', include(
+        f'{HeaderConfig.name}.urls')),
+
+    # URLConfs for `footer` application
+    path('footer/', include(
+        f'{FooterConfig.name}.urls')),
+
+        # URLConfs for `partner` application
+    path('partner/', include(
+        f'{PartnerConfig.name}.urls')),
 ]
 
 if settings.DEBUG:

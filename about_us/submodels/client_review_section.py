@@ -35,4 +35,4 @@ class ClientReviewSectionModel(Model):
 
     class Meta:
         verbose_name = 'Client review section'
-        verbose_name_plural = 'Client review sections'
+        verbose_name_plural = 'Client review section'

@@ -30,4 +30,4 @@ class FaqSectionModel(Model):
 
     class Meta:
         verbose_name = 'Faq section'
-        verbose_name_plural = 'Faq sections'
+        verbose_name_plural = 'Faq section'

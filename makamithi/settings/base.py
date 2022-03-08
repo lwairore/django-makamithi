@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     # Token Authentication
     'rest_framework.authtoken',
     'corsheaders',
-    # Product application
-    # 'product.apps.ProductConfig',
     # Home application
     'home_two.apps.HomeTwoConfig',
     # Service application
@@ -61,6 +59,22 @@ INSTALLED_APPS = [
     'contact_us.apps.ContactUsConfig',
     # Team application
     'team.apps.TeamConfig',
+    # Inbox application
+    'inbox.apps.InboxConfig',
+    # Terms and Privacy policy application
+    # 'terms_and_privacy_policy.apps.TermsAndPrivacyPolicyConfig',
+
+    # Header application
+    'header.apps.HeaderConfig',
+
+    # Social media application
+    'social_media.apps.SocialMediaConfig',
+
+    # Footer application
+    'footer.apps.FooterConfig',
+
+     # partner application
+    'partner.apps.PartnerConfig',
 ]
 
 MIDDLEWARE = [

@@ -5,14 +5,14 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 
-class ListHomeGalleryAPIView(APIView):
+class ListGalleryForHomePageAPIView(APIView):
     permission_classes = (AllowAny,)
     _serializer_class = ListHomeGallerySerializer
 
     def _list_gallery_kueryset(self):
         gallery_kueryset = GalleryModel.objects\
-            .only('image__image', 'image__caption', 'id',)\
-            .select_related('image')\
+            .only('home_preview__image', 'home_preview__caption', 'id',)\
+            .select_related('home_preview')\
             .order_by().all()
 
         return gallery_kueryset

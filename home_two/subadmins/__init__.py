@@ -7,3 +7,6 @@ from .why_choose_us_section import WhyChooseUsSectionModelAdmin
 from .seo import HomeSEODetailsModelAdmin
 from .core_value import CoreValueModelAdmin
 from .gallery_section import GallerySectionModelAdmin
+from .counter_area_section import CounterAreaSectionModelAdmin
+from .badge import BadgeModelAdmin
+from .product_area_section import ProductAreaSectionModelAdmin

@@ -14,5 +14,5 @@ class RetrieveServiceAboutSectionModelSerializer(ModelSerializer):
 
     class Meta:
         model = ServiceAboutSectionModel
-        fields = ('heading', 'description',
+        fields = ('heading', 'summary',
                   'section_image',)

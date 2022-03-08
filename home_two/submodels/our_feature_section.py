@@ -33,4 +33,4 @@ class FeatureSectionModel(Model):
 
     class Meta:
         verbose_name = 'Feature section'
-        verbose_name_plural = 'Feature sections'
+        verbose_name_plural = 'Feature section'

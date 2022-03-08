@@ -31,4 +31,4 @@ class PricingAreaSectionModel(Model):
 
     class Meta:
         verbose_name = 'Pricing area section'
-        verbose_name_plural = 'Pricing area sections'
+        verbose_name_plural = 'Pricing area section'

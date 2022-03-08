@@ -37,4 +37,4 @@ class VisitNowCtaSectionModel(Model):
 
     class Meta:
         verbose_name = 'Visit now cta section'
-        verbose_name_plural = 'Visit now cta sections'
+        verbose_name_plural = 'Visit now cta section'
