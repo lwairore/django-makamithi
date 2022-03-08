@@ -69,8 +69,10 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 
 APPEND_SLASH = True
 
-prod_db = dj_database_url.config(conn_max_age=500)
+prod_db = dj_database_url.config(
+    conn_max_age=500,
+    default=config('DATABASE_URL'))
 
-DATABASES = {}
-
-DATABASES['default'].update(prod_db)
+DATABASES = {
+    'default': prod_db
+}
