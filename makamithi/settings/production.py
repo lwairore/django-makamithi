@@ -36,9 +36,9 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# CORS_ORIGIN_WHITELIST = config(
-#     'PRODUCTION_CORS_ORIGIN_WHITELIST',
-#     cast=lambda v: tuple([s.strip().replace('\'', '') for s in v.split(',')]))
+CORS_ORIGIN_WHITELIST = config(
+    'PRODUCTION_CORS_ORIGIN_WHITELIST',
+    cast=lambda v: tuple([s.strip().replace('\'', '') for s in v.split(',')]))
 
 # # SECURE_SSL_REDIRECT redirects all HTTP requests to HTTPS (unless exempt).
 # # This means your project will always try to use an encrypted connection.
