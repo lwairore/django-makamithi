@@ -32,7 +32,7 @@ from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic.base import RedirectView
-
+from django.shortcuts import redirect
 
 
 # default: "Django Administration"
@@ -47,7 +47,7 @@ admin.site.site_title = 'Makamithi  site admin'  # default: "Django site admin"
 admin.site.site_url = "https://makamithi.com/"
 
 urlpatterns = [
-    path('admin/', admin.site.urls, name='admin_site'),
+    path('admin/', admin.site.urls),
 
     # URLConfs for `home` application
     path('home/', include(
@@ -101,11 +101,11 @@ urlpatterns = [
     path('footer/', include(
         f'{FooterConfig.name}.urls')),
 
-        # URLConfs for `partner` application
+    # URLConfs for `partner` application
     path('partner/', include(
         f'{PartnerConfig.name}.urls')),
-    
-    re_path(r'^.*$', RedirectView.as_view(pattern_name='admin_site', permanent=False), name='index')
+
+    re_path(r'^.*$', lambda request: redirect('admin/', permanent=True))
 
 ]
 
