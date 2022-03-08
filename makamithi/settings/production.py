@@ -3,6 +3,8 @@
 # Rerence https://www.digitalocean.com/community/tutorials/how-to-harden-your-production-django-project
 
 from .base import *
+import dj_database_url
+
 
 DEBUG = False
 
@@ -10,6 +12,7 @@ ALLOWED_HOSTS = config(
     'PRODUCTION_ALLOWED_HOSTS',
     cast=lambda v: [s.strip().replace('\'', '') for s in v.split(',')])
 
+MIDDLEWARE.insert(0,  'whitenoise.middleware.WhiteNoiseMiddleware')
 
 DATABASES = {
     'default': {
@@ -36,6 +39,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+#  Add configuration for static files storage using whitenoise
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 
@@ -74,3 +80,5 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 
 APPEND_SLASH = True
 
+prod_db = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
