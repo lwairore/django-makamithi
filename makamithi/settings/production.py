@@ -14,17 +14,6 @@ ALLOWED_HOSTS = config(
 
 MIDDLEWARE.insert(0,  'whitenoise.middleware.WhiteNoiseMiddleware')
 
-DATABASES = {
-    'default': {
-        'ENGINE': config('PROD_SQL_ENGINE', 'django.db.backends.sqlite3'),
-        'NAME': config('PROD_SQL_DATABASE', os.path.join(BASE_DIR, 'db.sqlite3')),
-        'USER': config('PROD_SQL_USER', 'user'),
-        'PASSWORD': config('PROD_SQL_PASSWORD', 'password'),
-        # 'HOST': config('PROD_SQL_HOST', 'localhost'),
-        # 'PORT': config('PROD_SQL_PORT', '5432'),
-    }
-}
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
@@ -81,4 +70,7 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 APPEND_SLASH = True
 
 prod_db = dj_database_url.config(conn_max_age=500)
+
+DATABASES = {}
+
 DATABASES['default'].update(prod_db)
