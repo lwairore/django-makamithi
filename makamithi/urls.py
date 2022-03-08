@@ -28,9 +28,11 @@ from service.apps import ServiceConfig
 from shop.apps import ShopConfig
 from home_two.apps import HomeTwoConfig
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic.base import RedirectView
+
 
 
 # default: "Django Administration"
@@ -102,6 +104,9 @@ urlpatterns = [
         # URLConfs for `partner` application
     path('partner/', include(
         f'{PartnerConfig.name}.urls')),
+    
+    re_path(r'^.*$', RedirectView.as_view(url='admin/', permanent=False), name='index')
+
 ]
 
 if settings.DEBUG:
