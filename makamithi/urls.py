@@ -47,7 +47,7 @@ admin.site.site_title = 'Makamithi  site admin'  # default: "Django site admin"
 admin.site.site_url = "https://makamithi.com/"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin_site'),
 
     # URLConfs for `home` application
     path('home/', include(
@@ -105,7 +105,7 @@ urlpatterns = [
     path('partner/', include(
         f'{PartnerConfig.name}.urls')),
     
-    re_path(r'^.*$', RedirectView.as_view(url='admin/', permanent=False), name='index')
+    re_path(r'^.*$', RedirectView.as_view(pattern_name='admin_site', permanent=False), name='index')
 
 ]
 
