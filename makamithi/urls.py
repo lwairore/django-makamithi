@@ -104,11 +104,11 @@ urlpatterns = [
     # URLConfs for `partner` application
     path('partner/', include(
         f'{PartnerConfig.name}.urls')),
-
-    re_path(r'^.*$', lambda request: redirect('admin/', permanent=True))
-
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [re_path(r'^.*$',
+                        lambda request: redirect('admin/', permanent=True))]

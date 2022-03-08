@@ -1,9 +1,22 @@
+from django.forms import ModelForm
 from home_two.submodels.about_section import AboutSectionModel
 from django.contrib.admin import ModelAdmin, register
+
+class _AboutSectionModelForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(_AboutSectionModelForm, self).__init__(*args, **kwargs)
+        self.fields['subheading'].required = True
+        self.fields['description'].required = True
+        self.fields['photo'].required = True
+
+    class Meta:
+        model = AboutSectionModel
+        fields = '__all__'
 
 
 @register(AboutSectionModel)
 class AboutSectionModelAdmin(ModelAdmin):
+    form = _AboutSectionModelForm
     list_display = ('heading', 'subheading', 'photo',)
     raw_id_fields = ('photo',)
 
