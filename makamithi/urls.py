@@ -38,12 +38,12 @@ from rest_framework.authtoken.models import Token
 admin.site.unregister(Token)
 
 # default: "Django Administration"
-admin.site.site_header = 'Makamithi Administration'
+admin.site.site_header = 'Makamithi Admin'
 
 # default: "Site administration"
-admin.site.index_title = 'Makamithi Site administration'
+admin.site.index_title = 'Welcome to Makamithi Portal'
 
-admin.site.site_title = 'Makamithi  site admin'  # default: "Django site admin"
+admin.site.site_title = 'Makamithi Admin Portal'  # default: "Django site admin"
 
 # By default , "VIEW SITE" points to '/' i.e localhost:8000
 admin.site.site_url = "https://lwairore.github.io/makamithi/"
