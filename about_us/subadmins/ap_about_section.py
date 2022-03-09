@@ -1,13 +1,28 @@
 from about_us.models import ApAboutSectionModel
 from django.contrib.admin import ModelAdmin, register
 
+from django.forms import ModelForm
+
+
+class _ApAboutSectionModelForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(_ApAboutSectionModelForm, self).__init__(*args, **kwargs)
+        self.fields['description'].required = True
+        self.fields['section_image'].required = True
+
+    class Meta:
+        model = ApAboutSectionModel
+        fields = '__all__'
+
 
 @register(ApAboutSectionModel)
 class ApAboutSectionModelAdmin(ModelAdmin):
+    form = _ApAboutSectionModelForm
     list_display = ('heading', 'subheading', 'section_image', 'modified_date',
                     'created_at', )
     date_hierarchy = 'created_at'
     raw_id_fields = ('section_image',)
+    readonly_fields = ('created_at', 'modified_date',)
 
     def has_delete_permission(self, request, obj=None):
         return False

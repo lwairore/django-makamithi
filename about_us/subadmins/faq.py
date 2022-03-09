@@ -8,4 +8,5 @@ class FaqModelAdmin(ModelAdmin):
                     'created_at', )
     date_hierarchy = 'created_at'
     list_filter = ('modified_date', 'created_at',)
+    readonly_fields = ('modified_date', 'created_at',)
     search_fields = ('question', 'answer',)

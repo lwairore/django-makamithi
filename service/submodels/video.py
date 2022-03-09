@@ -2,7 +2,7 @@ from django.core.exceptions import ValidationError
 from django.db.models.deletion import PROTECT
 from home_two.submodels.preview_item import PhotoModel
 from django.db.models.fields.files import FileField, ImageField
-from django.db.models.fields.related import ForeignKey
+from django.db.models.fields.related import OneToOneField
 from custom_utils.rename_image_filename_util import rename_uploaded_image_and_path
 from django.db.models import Model
 from django.db.models.fields import CharField, DateTimeField, TextField
@@ -10,7 +10,7 @@ from django.db.models.fields import CharField, DateTimeField, TextField
 
 class VideoModel(Model):
     title = CharField(max_length=80)
-    thumbnail = ForeignKey(
+    thumbnail = OneToOneField(
         PhotoModel, blank=True, null=True, on_delete=PROTECT)
     video = FileField(upload_to=rename_uploaded_image_and_path,
                       max_length=2000)

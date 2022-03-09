@@ -11,6 +11,8 @@ class _ProductModelForm(ModelForm):
         self.fields['price'].required = True
         self.fields['product_preview'].required = True
         self.fields['product_images'].required = True
+        self.fields['keywords'].required = True
+        self.fields['description'].required = True
 
     class Meta:
         model = ProductModel
@@ -24,6 +26,7 @@ class ProductModelAdmin(ModelAdmin):
     raw_id_fields = ('product_preview', 'price', )
     filter_horizontal = ('category', 'product_images', 'reviews',)
     list_filter = ('created_at', 'modified_date',)
+    readonly_fields = ('created_at', 'modified_date',)
     date_hierarchy = 'created_at'
     search_fields = ('title', 'total_sales',
                      'description', 'keywords',

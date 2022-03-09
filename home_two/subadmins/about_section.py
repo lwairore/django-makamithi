@@ -2,6 +2,7 @@ from django.forms import ModelForm
 from home_two.submodels.about_section import AboutSectionModel
 from django.contrib.admin import ModelAdmin, register
 
+
 class _AboutSectionModelForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(_AboutSectionModelForm, self).__init__(*args, **kwargs)
@@ -17,8 +18,11 @@ class _AboutSectionModelForm(ModelForm):
 @register(AboutSectionModel)
 class AboutSectionModelAdmin(ModelAdmin):
     form = _AboutSectionModelForm
-    list_display = ('heading', 'subheading', 'photo',)
+    list_display = ('heading', 'subheading', 'photo',
+                    'modified_date', 'created_at',)
     raw_id_fields = ('photo',)
+    date_hierarchy = 'created_at'
+    readonly_fields = ('modified_date', 'created_at',)
 
     def has_add_permission(self, request):
         # check if generally has add permission

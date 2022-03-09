@@ -12,6 +12,7 @@ class _GalleryModelForm(ModelForm):
         self.fields['title'].required = True
         self.fields['occured_on'].required = True
         self.fields['layout_image'].required = True
+        self.fields['description'].required = True
 
     class Meta:
         model = GalleryModel
@@ -21,10 +22,12 @@ class _GalleryModelForm(ModelForm):
 @register(GalleryModel)
 class GalleryModelAdmin(ModelAdmin):
     form = _GalleryModelForm
-    list_display = ('id', 'title', 'category', 'home_preview',
+    list_display = ('title', 'category', 'home_preview',
                     'gallery_preview', 'layout_image', 'occured_on', 'modified_date', 'created_at',)
     date_hierarchy = 'created_at'
-    raw_id_fields = ('home_preview', 'category', 'gallery_preview', 'layout_image',)
+    raw_id_fields = ('home_preview', 'category',
+                     'gallery_preview', 'layout_image',)
     list_filter = ('occured_on', 'modified_date', 'created_at',)
+    readonly_fields = ('modified_date', 'created_at',)
     search_fields = ('title', 'category', 'occured_on',
                      'keywords', 'description',)

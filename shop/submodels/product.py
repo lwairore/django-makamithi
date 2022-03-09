@@ -1,6 +1,7 @@
 from home_two.submodels.preview_item import PhotoModel
 from django.db.models import (
-    Model, ForeignKey, CharField, PROTECT, ManyToManyField)
+    Model, ForeignKey, CharField, PROTECT, ManyToManyField,
+    OneToOneField)
 from django.db.models.fields import DateTimeField, PositiveIntegerField, TextField
 
 
@@ -14,7 +15,7 @@ class ProductModel(Model):
     description = TextField(max_length=5000, blank=True, null=True)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
-    product_preview = ForeignKey(PhotoModel, blank=True, null=True, on_delete=PROTECT,
+    product_preview = OneToOneField(PhotoModel, blank=True, null=True, on_delete=PROTECT,
                                  related_name='product_model_product_preview')
     product_images = ManyToManyField(
         PhotoModel, blank=True, related_name='product_model_product_images')

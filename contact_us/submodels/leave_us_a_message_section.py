@@ -3,12 +3,12 @@ from django.db.models.fields import CharField, DateTimeField, TextField
 from home_two.submodels import PhotoModel
 from django.db.models import Model
 from django.db.models.deletion import PROTECT
-from django.db.models.fields.related import ForeignKey
+from django.db.models.fields.related import OneToOneField
 
 
 class LeaveUsAMessageSectionModel(Model):
     heading = CharField(max_length=70)
-    background_image = ForeignKey(
+    background_image = OneToOneField(
         PhotoModel, blank=True, null=True, on_delete=PROTECT)
     summary = TextField(max_length=250, blank=True, null=True)
     our_promise = TextField(max_length=250, blank=True, null=True)

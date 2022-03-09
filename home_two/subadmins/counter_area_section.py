@@ -20,6 +20,7 @@ class CounterAreaSectionModelAdmin(ModelAdmin):
     list_display = ('heading', 'background_image',
                     'modified_date', 'created_at',)
     raw_id_fields = ('background_image',)
+    readonly_fields = ('modified_date', 'created_at',)
 
     def has_add_permission(self, request):
         # check if generally has add permission

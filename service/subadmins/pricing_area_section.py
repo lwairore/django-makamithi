@@ -1,12 +1,28 @@
 from service.models import PricingAreaSectionModel
 from django.contrib.admin import ModelAdmin, register
+from django.forms import ModelForm
+
+
+class _PricingAreaSectionModelForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(_PricingAreaSectionModelForm, self).__init__(*args, **kwargs)
+        self.fields['section_image'].required = True
+        self.fields['summary'].required = True
+
+    class Meta:
+        model = PricingAreaSectionModel
+        fields = '__all__'
 
 
 @register(PricingAreaSectionModel)
 class PricingAreaSectionModelAdmin(ModelAdmin):
+    form = _PricingAreaSectionModelForm
     list_display = ('heading', 'section_image', 'modified_date',
                     'created_at', )
     raw_id_fields = ('section_image',)
+    date_hierarchy = 'created_at'
+    readonly_fields = ('modified_date',
+                       'created_at',)
 
     def has_delete_permission(self, request, obj=None):
         return False

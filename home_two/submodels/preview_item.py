@@ -14,7 +14,14 @@ class PhotoModel(Model):
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)
 
     def __str__(self) -> str:
-        return f'Image ID={self.id}'
+        if self.width and self.height:
+            return f'Image size={self.width}x{self.height}'
+        elif self.width and not self.height:
+            return f'Image size={self.width} (width)'
+        elif not self.width and self.height:
+            return f'Image size={self.height} (height)'
+        else:
+            return f'Image ID={self.id}'
 
     class Meta:
         verbose_name = 'Photo'

@@ -9,4 +9,5 @@ class PartnerModelAdmin(ModelAdmin):
     date_hierarchy = 'created_at'
     raw_id_fields = ('image',)
     list_filter = ('modified_date', 'created_at',)
+    readonly_fields = ('modified_date', 'created_at',)
     search_fields = ('title', 'link',)

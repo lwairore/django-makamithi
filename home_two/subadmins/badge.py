@@ -20,3 +20,5 @@ class BadgeModelAdmin(ModelAdmin):
     search_fields = ('title', 'number_of_years',)
     date_hierarchy = 'created_at'
     list_filter = ('created_at', 'modified_date',)
+    readonly_fields = ('modified_date',
+                       'created_at',)

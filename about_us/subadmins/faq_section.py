@@ -1,9 +1,22 @@
 from about_us.models import FaqSectionModel
 from django.contrib.admin import ModelAdmin, register
+from django.forms import ModelForm
+
+
+class _FaqSectionModelForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(_FaqSectionModelForm, self).__init__(*args, **kwargs)
+        self.fields['background_image'].required = True
+
+    class Meta:
+        model = FaqSectionModel
+        fields = '__all__'
 
 
 @register(FaqSectionModel)
 class FaqSectionModelAdmin(ModelAdmin):
+    form = _FaqSectionModelForm
+    readonly_fields = ('created_at', 'modified_date',)
     list_display = ('heading', 'background_image', 'modified_date',
                     'created_at', )
     raw_id_fields = ('background_image',)

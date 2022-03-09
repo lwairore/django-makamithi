@@ -7,6 +7,8 @@ class _LeaveUsAMessageSectionModelForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(_LeaveUsAMessageSectionModelForm, self).__init__(*args, **kwargs)
         self.fields['our_promise'].required = True
+        self.fields['background_image'].required = True
+        self.fields['summary'].required = True
 
     class Meta:
         model = LeaveUsAMessageSectionModel
@@ -15,9 +17,12 @@ class _LeaveUsAMessageSectionModelForm(ModelForm):
 
 @register(LeaveUsAMessageSectionModel)
 class LeaveUsAMessageSectionModelAdmin(ModelAdmin):
+    form = _LeaveUsAMessageSectionModelForm
     list_display = ('heading', 'background_image', 'modified_date',
                     'created_at', )
     raw_id_fields = ('background_image',)
+    readonly_fields = ('modified_date',
+                       'created_at', )
 
     def has_delete_permission(self, request, obj=None):
         return False

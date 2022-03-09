@@ -1,13 +1,28 @@
 from service.models import ServiceAreaSectionModel
 from django.contrib.admin import ModelAdmin, register
+from django.forms import ModelForm
+
+
+class _ServiceAreaSectionModelForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(_ServiceAreaSectionModelForm, self).__init__(*args, **kwargs)
+        self.fields['years_of_experience_image'].required = True
+        self.fields['description'].required = True
+
+    class Meta:
+        model = ServiceAreaSectionModel
+        fields = '__all__'
 
 
 @register(ServiceAreaSectionModel)
 class ServiceAreaSectionModelAdmin(ModelAdmin):
+    form = _ServiceAreaSectionModelForm
     list_display = ('heading', 'years_of_experience_image', 'modified_date',
                     'created_at', )
     date_hierarchy = 'created_at'
     raw_id_fields = ('years_of_experience_image',)
+    readonly_fields = ('modified_date',
+                       'created_at', )
 
     def has_delete_permission(self, request, obj=None):
         return False

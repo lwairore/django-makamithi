@@ -10,3 +10,4 @@ class InboxModelAdmin(ModelAdmin):
     date_hierarchy = 'created_at'
     list_editable = ('read',)
     list_filter = ('read', 'created_at', 'modified_date',)
+    readonly_fields = ('created_at', 'modified_date',)

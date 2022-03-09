@@ -3,11 +3,11 @@ from home_two.submodels.preview_item import PhotoModel
 from django.db.models import Model
 from django.db.models.deletion import PROTECT
 from django.db.models.fields import DateTimeField
-from django.db.models.fields.related import ForeignKey
+from django.db.models.fields.related import OneToOneField
 
 
 class GalleryDetailSectionModel(Model):
-    background_image = ForeignKey(
+    background_image = OneToOneField(
         PhotoModel, blank=True, null=True, on_delete=PROTECT)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)

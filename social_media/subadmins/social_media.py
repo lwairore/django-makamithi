@@ -19,4 +19,5 @@ class SocialMediaModelAdmin(ModelAdmin):
     list_display = ('title', 'link', 'modified_date', 'created_at',)
     date_hierarchy = 'created_at'
     list_filter = ('modified_date', 'created_at',)
+    readonly_fields = ('modified_date', 'created_at',)
     search_fields = ('title', 'link',)

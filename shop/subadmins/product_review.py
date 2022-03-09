@@ -19,5 +19,6 @@ class ProductReviewAdmin(ModelAdmin):
     list_display = ('full_name', 'rating', 'client_image',)
     raw_id_fields = ('client_image', )
     list_filter = ('created_at', 'modified_date',)
+    readonly_fields = ('created_at', 'modified_date',)
     date_hierarchy = 'created_at'
     search_fields = ('full_name', 'review', )

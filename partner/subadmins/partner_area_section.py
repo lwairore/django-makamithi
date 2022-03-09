@@ -8,6 +8,8 @@ class PartnerAreaSectionModelAdmin(ModelAdmin):
                     'created_at', )
     date_hierarchy = 'created_at'
     raw_id_fields = ('background_image',)
+    readonly_fields = ( 'modified_date',
+                    'created_at',)
 
     def has_delete_permission(self, request, obj=None):
         return False

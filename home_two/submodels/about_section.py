@@ -1,15 +1,18 @@
 from django.core.exceptions import ValidationError
 from django.db.models import Model
 from django.db.models.deletion import PROTECT
-from django.db.models.fields import CharField, TextField
-from django.db.models.fields.related import ForeignKey
+from django.db.models.fields import (CharField, TextField, DateTimeField)
+from django.db.models.fields.related import OneToOneField
 
 
 class AboutSectionModel(Model):
     heading = CharField(max_length=70)
     subheading = CharField(max_length=35, blank=True, null=True)
     description = TextField(max_length=465, blank=True, null=True)
-    photo = ForeignKey('PhotoModel', blank=True, null=True, on_delete=PROTECT)
+    photo = OneToOneField('PhotoModel', blank=True,
+                          null=True, on_delete=PROTECT)
+    created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
+    modified_date = DateTimeField(auto_now=True, blank=True, null=True)
 
     def __str__(self) -> str:
         return self.heading

@@ -1,6 +1,6 @@
 from home_two.submodels.preview_item import PhotoModel
 from django.db.models import (
-    Model, ForeignKey, CharField, PROTECT)
+    Model, OneToOneField, CharField, PROTECT)
 from django.db.models.fields import DateTimeField, TextField
 
 
@@ -21,8 +21,8 @@ FIVE_POINT_NUMERICAL_RATING_SCALE = (
 
 class ProductReview(Model):
     full_name = CharField(max_length=70)
-    client_image = ForeignKey(PhotoModel, blank=True,
-                              null=True, on_delete=PROTECT)
+    client_image = OneToOneField(PhotoModel, blank=True,
+                                 null=True, on_delete=PROTECT)
     review = TextField(max_length=5000)
     rating = CharField(
         max_length=11,

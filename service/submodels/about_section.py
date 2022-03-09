@@ -3,13 +3,13 @@ from django.db.models.fields import CharField, DateTimeField, TextField
 from home_two.submodels import PhotoModel
 from django.db.models import Model
 from django.db.models.deletion import PROTECT
-from django.db.models.fields.related import ForeignKey
+from django.db.models.fields.related import OneToOneField
 
 
 class ServiceAboutSectionModel(Model):
     heading = CharField(max_length=70)
     summary = TextField(max_length=500, blank=True, null=True)
-    section_image = ForeignKey(
+    section_image = OneToOneField(
         PhotoModel, blank=True, null=True, on_delete=PROTECT)
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
     modified_date = DateTimeField(auto_now=True, blank=True, null=True)

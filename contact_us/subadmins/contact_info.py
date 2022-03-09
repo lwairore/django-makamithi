@@ -9,6 +9,7 @@ class ContactInfoModelAdmin(ModelAdmin):
                     'address', 'call_us_at', 'email_us_at', 'can_appear_on_footer',)
     list_editable = ('can_appear_on_footer',)
     list_filter = ('can_appear_on_footer', 'modified_date', 'created_at',)
+    readonly_fields = ('modified_date', 'created_at',)
     date_hierarchy = 'created_at'
     search_fields = ('address_title',
                      'address', 'email', 'phone_number',)

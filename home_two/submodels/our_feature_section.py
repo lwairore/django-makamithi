@@ -2,15 +2,15 @@ from django.core.exceptions import ValidationError
 from django.db.models import Model
 from django.db.models.deletion import PROTECT
 from django.db.models.fields import CharField, DateTimeField, TextField
-from django.db.models.fields.related import ForeignKey
+from django.db.models.fields.related import OneToOneField
 
 
 class FeatureSectionModel(Model):
     summary = TextField(max_length=250, blank=True, null=True)
-    background_image = ForeignKey(
+    background_image = OneToOneField(
         'PhotoModel', blank=True, null=True, on_delete=PROTECT,
         related_name='feature_section_background_image')
-    section_image = ForeignKey(
+    section_image = OneToOneField(
         'PhotoModel', blank=True, null=True, on_delete=PROTECT,
         related_name='feature_section_section_image')
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)

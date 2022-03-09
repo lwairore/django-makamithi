@@ -20,6 +20,9 @@ class FooterSectionModelAdmin(ModelAdmin):
     list_display = ('footer_text', 'footer_logo', 'section_image', 'background_image',  'modified_date',
                     'created_at', )
     raw_id_fields = ('footer_logo', 'background_image', 'section_image',)
+    date_hierarchy = 'created_at'
+    readonly_fields = ('modified_date',
+                       'created_at',)
 
     def has_delete_permission(self, request, obj=None):
         return False

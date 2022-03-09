@@ -3,7 +3,7 @@ from django.db.models import Model
 from django.db.models.deletion import PROTECT
 from django.db.models.fields import CharField, DateTimeField, TextField
 from django.db.models.fields.related import (
-    ForeignKey, ManyToManyField, OneToOneField)
+    OneToOneField, ManyToManyField, OneToOneField)
 
 
 class ServiceModel(Model):
@@ -11,14 +11,14 @@ class ServiceModel(Model):
     keywords = CharField(max_length=180, blank=True, null=True)
     summary = TextField(max_length=120, blank=True, null=True)
     description = TextField(max_length=1200, blank=True, null=True)
-    home_photo = ForeignKey(PhotoModel, blank=True,
-                            null=True, on_delete=PROTECT, related_name='service_model_home_photo')
-    about_photo = ForeignKey(PhotoModel, blank=True,
-                             null=True, on_delete=PROTECT, related_name='service_model_about_photo')
-    service_page_photo = ForeignKey(PhotoModel, blank=True,
-                                    null=True, on_delete=PROTECT, related_name='service_model_service_page_photo')
-    service_detail_photo = ForeignKey(PhotoModel, blank=True,
-                                      null=True, on_delete=PROTECT, related_name='service_model_service_detail_photo')
+    home_photo = OneToOneField(PhotoModel, blank=True,
+                               null=True, on_delete=PROTECT, related_name='service_model_home_photo')
+    about_photo = OneToOneField(PhotoModel, blank=True,
+                                null=True, on_delete=PROTECT, related_name='service_model_about_photo')
+    service_page_photo = OneToOneField(PhotoModel, blank=True,
+                                       null=True, on_delete=PROTECT, related_name='service_model_service_page_photo')
+    service_detail_photo = OneToOneField(PhotoModel, blank=True,
+                                         null=True, on_delete=PROTECT, related_name='service_model_service_detail_photo')
     nav_sidebar_photo = OneToOneField(PhotoModel, blank=True,
                                       null=True, on_delete=PROTECT, related_name='service_model_sidebar_photo')
     created_at = DateTimeField(auto_now_add=True, blank=True, null=True)
