@@ -12,6 +12,6 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE',
-                      'makamithi.settings.development')
+                      'makamithi.settings.production')
 
 application = get_wsgi_application()
