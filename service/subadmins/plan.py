@@ -2,6 +2,7 @@ from service.submodels.plan import BenefitModel, PlanModel, TypeOfPlanModel
 from django.contrib.admin import ModelAdmin, register
 from django.utils.html import format_html
 from django.forms import ModelForm
+from django.utils.safestring import mark_safe
 
 
 class _BenefitModelForm(ModelForm):
@@ -43,7 +44,24 @@ class TypeOfPlanModelAdmin(ModelAdmin):
     raw_id_fields = ('image',)
     date_hierarchy = 'modified_date'
     list_filter = ('created_at', 'modified_date',)
-    readonly_fields = ('created_at', 'modified_date',)
+    readonly_fields = ('created_at', 'modified_date', 'image_preview',)
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'description',),
+        }),
+        ('Image', {
+            'fields': ('image', 'image_preview',
+                       ),
+        }),
+        (None, {
+            'fields': ('created_at', 'modified_date',),
+        }),
+    )
+
+    def image_preview(self, obj):
+        return mark_safe('<img src="{url}" style="max-width: 100%; max-height: 100%;" />'.format(
+            url=obj.image.image.url,
+        ))
 
 
 class _PlanModelForm(ModelForm):

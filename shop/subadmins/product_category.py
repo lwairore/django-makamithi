@@ -21,3 +21,11 @@ class ProductCategoryModelAdmin(ModelAdmin):
     readonly_fields = ('created_at', 'modified_date',)
     list_filter = ('created_at', 'modified_date',)
     search_fields = ('title', 'description',)
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'description',),
+        }),
+        (None, {
+            'fields': ('created_at', 'modified_date',),
+        }),
+    )

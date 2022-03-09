@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from home_two.submodels.banner_ad import BannerAdModel
 from django.contrib.admin import ModelAdmin, register
+from django.utils.safestring import mark_safe
 
 
 class _BannerAdModelForm(ModelForm):
@@ -23,4 +24,21 @@ class BannerAdModelAdmin(ModelAdmin):
     search_fields = ('title', 'description',)
     list_filter = ('modified_date', 'created_at',)
     readonly_fields = ('modified_date',
-                       'created_at',)
+                       'created_at', 'photo_preview',)
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'description',),
+        }),
+        ('Preview', {
+            'fields': ('photo', 'photo_preview',
+                       ),
+        }),
+        (None, {
+            'fields': ('created_at', 'modified_date',),
+        }),
+    )
+
+    def photo_preview(self, obj):
+        return mark_safe('<img src="{url}" style="max-width: 100%; max-height: 100%;" />'.format(
+            url=obj.photo.image.url,
+        ))

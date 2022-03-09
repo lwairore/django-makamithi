@@ -21,3 +21,11 @@ class PriceModelAdmin(ModelAdmin):
     list_filter = ('created_at', 'modified_date',)
     readonly_fields = ('created_at', 'modified_date',)
     search_fields = ('now', 'was',)
+    fieldsets = (
+        (None, {
+            'fields': ('now', 'was',),
+        }),
+        (None, {
+            'fields': ('created_at', 'modified_date',),
+        }),
+    )

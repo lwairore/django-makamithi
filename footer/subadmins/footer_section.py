@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from footer.models import FooterSectionModel
 from django.contrib.admin import ModelAdmin, register
+from django.utils.safestring import mark_safe
 
 
 class _FooterSectionModelForm(ModelForm):
@@ -22,7 +23,38 @@ class FooterSectionModelAdmin(ModelAdmin):
     raw_id_fields = ('footer_logo', 'background_image', 'section_image',)
     date_hierarchy = 'created_at'
     readonly_fields = ('modified_date',
-                       'created_at',)
+                       'created_at', 'section_image_preview',
+                       'background_image_preview', 'footer_logo_preview',)
+    fieldsets = (
+        (None, {
+            'fields': ('footer_text',),
+        }),
+        ('Preview', {
+            'fields': (
+                'footer_logo', 'footer_logo_preview',
+                'section_image', 'section_image_preview',
+                'background_image', 'background_image_preview',
+            ),
+        }),
+        (None, {
+            'fields': ('created_at', 'modified_date',),
+        }),
+    )
+
+    def footer_logo_preview(self, obj):
+        return mark_safe('<img src="{url}" style="max-width: 100%; max-height: 100%;" />'.format(
+            url=obj.footer_logo.image.url,
+        ))
+
+    def section_image_preview(self, obj):
+        return mark_safe('<img src="{url}" style="max-width: 100%; max-height: 100%;" />'.format(
+            url=obj.section_image.image.url,
+        ))
+
+    def background_image_preview(self, obj):
+        return mark_safe('<img src="{url}" style="max-width: 100%; max-height: 100%;" />'.format(
+            url=obj.background_image.image.url,
+        ))
 
     def has_delete_permission(self, request, obj=None):
         return False

@@ -1,6 +1,7 @@
 from about_us.models import FaqSectionModel
 from django.contrib.admin import ModelAdmin, register
 from django.forms import ModelForm
+from django.utils.safestring import mark_safe
 
 
 class _FaqSectionModelForm(ModelForm):
@@ -16,10 +17,29 @@ class _FaqSectionModelForm(ModelForm):
 @register(FaqSectionModel)
 class FaqSectionModelAdmin(ModelAdmin):
     form = _FaqSectionModelForm
-    readonly_fields = ('created_at', 'modified_date',)
+    readonly_fields = ('created_at', 'modified_date',
+                       'background_image_preview',)
     list_display = ('heading', 'background_image', 'modified_date',
                     'created_at', )
     raw_id_fields = ('background_image',)
+    fieldsets = (
+        (None, {
+            'fields': ('heading',),
+        }),
+        ('Preview', {
+            'fields': (
+                'background_image', 'background_image_preview',
+            ),
+        }),
+        (None, {
+            'fields': ('created_at', 'modified_date',),
+        }),
+    )
+
+    def background_image_preview(self, obj):
+        return mark_safe('<img src="{url}" style="max-width: 100%; max-height: 100%;" />'.format(
+            url=obj.background_image.image.url,
+        ))
 
     def has_delete_permission(self, request, obj=None):
         return False
