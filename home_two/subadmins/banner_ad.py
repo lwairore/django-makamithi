@@ -3,6 +3,7 @@ from home_two.submodels.banner_ad import BannerAdModel
 from django.contrib.admin import ModelAdmin, register
 from django.utils.safestring import mark_safe
 
+MAX_OBJECTS = 3
 
 class _BannerAdModelForm(ModelForm):
     def __init__(self, *args, **kwargs):
@@ -42,3 +43,8 @@ class BannerAdModelAdmin(ModelAdmin):
         return mark_safe('<img src="{url}" style="max-width: 100%; max-height: 100%;" />'.format(
             url=obj.photo.image.url,
         ))
+
+    def has_add_permission(self, request):
+        if self.model.objects.count() >= MAX_OBJECTS:
+            return False
+        return super().has_add_permission(request)
