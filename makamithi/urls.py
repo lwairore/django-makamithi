@@ -46,7 +46,7 @@ admin.site.index_title = 'Makamithi Site administration'
 admin.site.site_title = 'Makamithi  site admin'  # default: "Django site admin"
 
 # By default , "VIEW SITE" points to '/' i.e localhost:8000
-admin.site.site_url = "https://makamithi.com/"
+admin.site.site_url = "https://lwairore.github.io/makamithi/"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
